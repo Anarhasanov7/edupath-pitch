@@ -1,0 +1,393 @@
+% ═══════════════════════════════════════════════════════════════
+%  EDUPATH EDUCATION — Partner Pitch Document
+%  XeLaTeX · August 2026
+% ═══════════════════════════════════════════════════════════════
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage[most]{tcolorbox}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{changepage}
+\usepackage{geometry}
+\usepackage{fontawesome5}
+\usepackage{enumitem}
+
+\IfFontExistsTF{Helvetica Neue}{\setsansfont{Helvetica Neue}}{\setsansfont{Helvetica}}
+\renewcommand{\familydefault}{\sfdefault}
+
+% ─── Colors ───
+\definecolor{ink}{HTML}{080A14}
+\definecolor{navy}{HTML}{0B1E3F}
+\definecolor{slate}{HTML}{1C202E}
+\definecolor{electric}{HTML}{3DDFFF}
+\definecolor{lime}{HTML}{C6FF3D}
+\definecolor{limeD}{HTML}{8BD01A}
+\definecolor{coral}{HTML}{FF5C3D}
+\definecolor{magenta}{HTML}{FF3D8B}
+\definecolor{amber}{HTML}{FFB800}
+\definecolor{grayT}{HTML}{6B7280}
+\definecolor{lightgray}{HTML}{E8ECF1}
+\definecolor{offwhite}{HTML}{F4F5F7}
+\definecolor{darktext}{HTML}{1A1A2E}
+\definecolor{muted}{HTML}{9CA3AF}
+
+\geometry{top=0mm, bottom=0mm, left=0mm, right=0mm}
+\usetikzlibrary{calc}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\newcommand{\sectbar}{%
+  \tikz[baseline=-2pt]{\shade[top color=electric, bottom color=coral] (0,0) rectangle (3pt, 12pt);}%
+}
+\newcommand{\cw}[1]{{\color{lime}\faCheck}\ #1\\[1.5pt]}
+
+% ═══════════════════════════════════════════════════════════════
+\begin{document}
+
+% ═════ PAGE 1: Cover + Mission + Benefits ═════
+\begin{tikzpicture}[remember picture, overlay]
+  \shade[top color=navy, bottom color=ink]
+    (current page.north west) rectangle ([yshift=-38mm]current page.north east);
+  \begin{scope}
+    \clip (current page.north west) rectangle ([yshift=-38mm]current page.north east);
+    \fill[electric, opacity=0.07] ([xshift=-25mm, yshift=-10mm]current page.north east) circle (26mm);
+    \fill[coral, opacity=0.05] ([xshift=-55mm, yshift=-28mm]current page.north east) circle (18mm);
+  \end{scope}
+  \shade[left color=electric, right color=magenta]
+    ([yshift=-38mm]current page.north west) rectangle ([yshift=-38.8mm]current page.north east);
+\end{tikzpicture}
+
+\vspace*{3mm}
+\begin{adjustwidth}{12mm}{12mm}
+{\fontsize{22pt}{26pt}\selectfont\bfseries\color{white}Edupath {\color{electric}Education}}\\[1mm]
+{\color{muted}\fontsize{8pt}{10pt}\selectfont\bfseries ПОСТУПЛЕНИЕ В УНИВЕРСИТЕТЫ ИТАЛИИ · ПАРТНЁРСКОЕ ПРЕДЛОЖЕНИЕ}
+\end{adjustwidth}
+
+\vspace{1mm}
+\hfill\begin{minipage}{0.35\textwidth}\raggedleft
+  {\color{white}\fontsize{9pt}{12pt}\selectfont\bfseries Anar Hasanov}\\
+  {\color{muted}\fontsize{8pt}{11pt}\selectfont
+   Edupath Education\\Via Roma 37, Italy\\+39 3280810631\\hasanov.anar.2023@gmail.com}
+\end{minipage}\hspace{12mm}
+
+\vspace{6mm}
+\begin{adjustwidth}{12mm}{12mm}
+
+% ─── Stats row ───
+\noindent\begin{tabularx}{\linewidth}{@{}X X X@{}}
+  \begin{tcolorbox}[enhanced, colback=slate, colframe=slate, boxrule=0pt, arc=2mm, left=3mm, right=3mm, top=2.5mm, bottom=2.5mm, halign=center]
+    {\color{electric}\fontsize{22pt}{24pt}\selectfont\bfseries 30}\par\vspace{1pt}
+    {\color{muted}\scriptsize СТУДЕНТОВ В ГОД}
+  \end{tcolorbox} &
+  \begin{tcolorbox}[enhanced, colback=slate, colframe=slate, boxrule=0pt, arc=2mm, left=3mm, right=3mm, top=2.5mm, bottom=2.5mm, halign=center]
+    {\color{coral}\fontsize{22pt}{24pt}\selectfont\bfseries 95\%}\par\vspace{1pt}
+    {\color{muted}\scriptsize УРОВЕНЬ ЗАЧИСЛЕНИЯ}
+  \end{tcolorbox} &
+  \begin{tcolorbox}[enhanced, colback=slate, colframe=slate, boxrule=0pt, arc=2mm, left=3mm, right=3mm, top=2.5mm, bottom=2.5mm, halign=center]
+    {\color{lime}\fontsize{22pt}{24pt}\selectfont\bfseries 90\%}\par\vspace{1pt}
+    {\color{muted}\scriptsize ПОЛУЧИЛИ СТИПЕНДИЮ}
+  \end{tcolorbox}
+\end{tabularx}
+
+\vspace{4mm}
+{\color{darktext}\small\raggedright
+\textbf{Edupath Education} — консалтинговая компания в Италии (под Римом). Мы занимаемся поступлением выпускников в итальянские университеты по B2B-каналу. Сопровождаем студента от подачи документов до диплома.}
+
+\vspace{4mm}
+{\fontsize{12pt}{14pt}\selectfont\bfseries\color{navy}\sectbar~Миссия}
+
+\vspace{2mm}
+\begin{tcolorbox}[enhanced, colback=navy, colframe=navy, boxrule=0pt, arc=3mm, left=5mm, right=5mm, top=4mm, bottom=4mm]
+{\color{electric}\fontsize{8pt}{9pt}\selectfont\bfseries MISSION}\par\vspace{3pt}
+{\color{white}\fontsize{11pt}{14pt}\selectfont\selectfont
+Мы помогаем международным выпускникам получить доступ к итальянскому высшему образованию — от подачи документов до диплома. Специализируемся на \textbf{\color{electric}региональных стипендиях DSU/EDISU}, которые покрывают обучение, стипендию до €7\,000/год, общежитие и питание. Сопровождаем студента \textbf{\color{electric}весь срок обучения}.}
+\end{tcolorbox}
+
+\vspace{4mm}
+{\fontsize{12pt}{14pt}\selectfont\bfseries\color{navy}\sectbar~Преимущества для университета-партнёра}
+
+\vspace{3mm}
+\noindent\begin{tabularx}{\linewidth}{@{}X X@{}}
+  \begin{tcolorbox}[enhanced, colback=white, colframe=electric, boxrule=0pt, leftrule=3pt, arc=1.5mm, left=3mm, right=3mm, top=2.5mm, bottom=2.5mm]
+    {\color{electric}\bfseries\small Комиссия 15\%}\par\vspace{1pt}
+    {\color{darktext}\scriptsize От стоимости пакета за каждого зачисленного. Пример: 5 × €2\,340 × 15\% = €1\,755.}
+  \end{tcolorbox} &
+  \begin{tcolorbox}[enhanced, colback=white, colframe=coral, boxrule=0pt, leftrule=3pt, arc=1.5mm, left=3mm, right=3mm, top=2.5mm, bottom=2.5mm]
+    {\color{coral}\bfseries\small Канал набора}\par\vspace{1pt}
+    {\color{darktext}\scriptsize Ваши выпускники — в топовые итальянские вузы. Повышение престижа.}
+  \end{tcolorbox}
+  \begin{tcolorbox}[enhanced, colback=white, colframe=limeD, boxrule=0pt, leftrule=3pt, arc=1.5mm, left=3mm, right=3mm, top=2.5mm, bottom=2.5mm]
+    {\color{limeD}\bfseries\small Обмен преподавателями}\par\vspace{1pt}
+    {\color{darktext}\scriptsize 1–2 преподавателя/год — гостевые лекции в итальянских вузах.}
+  \end{tcolorbox} &
+  \begin{tcolorbox}[enhanced, colback=white, colframe=amber, boxrule=0pt, leftrule=3pt, arc=1.5mm, left=3mm, right=3mm, top=2.5mm, bottom=2.5mm]
+    {\color{amber}\bfseries\small Летние школы + тренинги}\par\vspace{1pt}
+    {\color{darktext}\scriptsize Совместная программа в Италии + ежеквартальные тренинги для офиса.}
+  \end{tcolorbox}
+\end{tabularx}
+
+\end{adjustwidth}
+
+% ─── Footer ───
+\begin{tikzpicture}[remember picture, overlay]
+  \draw[lightgray, line width=0.3pt] ([yshift=15mm, xshift=12mm]current page.south west) -- ([yshift=15mm, xshift=-12mm]current page.south east);
+  \node[anchor=west, text=grayT, font=\fontsize{7pt}{8pt}\selectfont] at ([yshift=12mm, xshift=12mm]current page.south west)
+    {Edupath Education · Партнёрское предложение · Август 2026};
+  \node[anchor=east, text=grayT, font=\fontsize{7pt}{8pt}\selectfont] at ([yshift=12mm, xshift=-12mm]current page.south east)
+    {Стр. 1 / 3};
+\end{tikzpicture}
+
+\newpage
+
+% ═════ PAGE 2: Why Italy + Packages ═════
+\begin{tikzpicture}[remember picture, overlay]
+  \shade[top color=navy, bottom color=ink]
+    (current page.north west) rectangle ([yshift=-16mm]current page.north east);
+  \shade[left color=electric, right color=magenta]
+    ([yshift=-16mm]current page.north west) rectangle ([yshift=-16.6mm]current page.north east);
+\end{tikzpicture}
+
+\vspace*{2mm}
+\begin{adjustwidth}{12mm}{12mm}
+{\fontsize{14pt}{16pt}\selectfont\bfseries\color{white}Edupath {\color{electric}Education}}
+\hfill
+{\color{muted}\fontsize{8pt}{10pt}\selectfont Почему Италия · Пакеты}
+\end{adjustwidth}
+
+\vspace{6mm}
+\begin{adjustwidth}{12mm}{12mm}
+
+% ─── Why Italy ───
+{\fontsize{12pt}{14pt}\selectfont\bfseries\color{navy}\sectbar~Почему Италия — что получает студент}
+
+\vspace{2mm}
+{\color{grayT}\scriptsize Это не просто учёба за рубежом. Это карьерный капитал, который работает всю жизнь.}
+
+\vspace{4mm}
+\noindent\begin{tabularx}{\linewidth}{@{}X X X X@{}}
+% Row 1
+  \begin{tcolorbox}[enhanced, colback=white, colframe=lightgray, boxrule=0pt, arc=2mm, left=3mm, right=3mm, top=2.5mm, bottom=2.5mm]
+    {\color{electric}\bfseries\small\faLanguage}\ {\color{electric}\bfseries\small Итальянский язык}\par\vspace{1pt}
+    {\color{darktext}\scriptsize Второй язык в резюме. Доступ к компаниям в Италии, Швейцарии и ЕС.}
+  \end{tcolorbox} &
+  \begin{tcolorbox}[enhanced, colback=white, colframe=lightgray, boxrule=0pt, arc=2mm, left=3mm, right=3mm, top=2.5mm, bottom=2.5mm]
+    {\color{limeD}\bfseries\small\faBookOpen}\par\vspace{1pt}
+    {\color{limeD}\bfseries\small Публикации}\par\vspace{1pt}
+    {\color{darktext}\scriptsize Топовые журналы под руководством европейских профессоров.}
+  \end{tcolorbox} &
+  \begin{tcolorbox}[enhanced, colback=white, colframe=lightgray, boxrule=0pt, arc=2mm, left=3mm, right=3mm, top=2.5mm, bottom=2.5mm]
+    {\color{coral}\bfseries\small\faUserGraduate}\par\vspace{1pt}
+    {\color{coral}\bfseries\small Топ-профессора}\par\vspace{1pt}
+    {\color{darktext}\scriptsize Bologna, Sapienza, PoliMi — авторы учебников, эксперты.}
+  \end{tcolorbox} &
+  \begin{tcolorbox}[enhanced, colback=white, colframe=lightgray, boxrule=0pt, arc=2mm, left=3mm, right=3mm, top=2.5mm, bottom=2.5mm]
+    {\color{amber}\bfseries\small\faGlobe}\par\vspace{1pt}
+    {\color{amber}\bfseries\small Обмен в США/Канаду}\par\vspace{1pt}
+    {\color{darktext}\scriptsize Семестр в Америке, Канаде или другом университете ЕС.}
+  \end{tcolorbox}
+% Row 2
+  \begin{tcolorbox}[enhanced, colback=white, colframe=lightgray, boxrule=0pt, arc=2mm, left=3mm, right=3mm, top=2.5mm, bottom=2.5mm]
+    {\color{magenta}\bfseries\small\faExchangeAlt}\par\vspace{1pt}
+    {\color{magenta}\bfseries\small Erasmus+}\par\vspace{1pt}
+    {\color{darktext}\scriptsize 1–2 семестра в другой стране ЕС, финансирование Еврокомиссии.}
+  \end{tcolorbox} &
+  \begin{tcolorbox}[enhanced, colback=white, colframe=lightgray, boxrule=0pt, arc=2mm, left=3mm, right=3mm, top=2.5mm, bottom=2.5mm]
+    {\color{electric}\bfseries\small\faUsers}\par\vspace{1pt}
+    {\color{electric}\bfseries\small Сеть контактов}\par\vspace{1pt}
+    {\color{darktext}\scriptsize Однокурсники из 50+ стран. Нетворкинг на всю жизнь.}
+  \end{tcolorbox} &
+  \begin{tcolorbox}[enhanced, colback=white, colframe=lightgray, boxrule=0pt, arc=2mm, left=3mm, right=3mm, top=2.5mm, bottom=2.5mm]
+    {\color{limeD}\bfseries\small\faScroll}\par\vspace{1pt}
+    {\color{limeD}\bfseries\small Евро-диплом}\par\vspace{1pt}
+    {\color{darktext}\scriptsize Признаётся в ЕС. Bologna Process, ECTS. Cutting-edge предметы.}
+  \end{tcolorbox} &
+  \begin{tcolorbox}[enhanced, colback=white, colframe=lightgray, boxrule=0pt, arc=2mm, left=3mm, right=3mm, top=2.5mm, bottom=2.5mm]
+    {\color{coral}\bfseries\small\faBriefcase}\par\vspace{1pt}
+    {\color{coral}\bfseries\small Опыт работы}\par\vspace{1pt}
+    {\color{darktext}\scriptsize Стажировки в итальянских и международных компаниях.}
+  \end{tcolorbox}
+\end{tabularx}
+
+\vspace{4mm}
+\begin{tcolorbox}[enhanced, colback=navy, colframe=navy, boxrule=0pt, arc=3mm, left=5mm, right=5mm, top=3.5mm, bottom=3.5mm]
+{\color{white}\fontsize{11pt}{13pt}\selectfont\bfseries Итог: студент получает не просто диплом — он получает карьерный капитал.}\par\vspace{2pt}
+{\color{muted}\scriptsize Второй язык · Европейский диплом · Международная сеть · Опыт работы в ЕС · Обмен в США/Канаду · Публикации · Менторство}
+\end{tcolorbox}
+
+\vspace{5mm}
+{\fontsize{12pt}{14pt}\selectfont\bfseries\color{navy}\sectbar~Пакеты услуг}
+
+\vspace{3mm}
+\noindent\begin{minipage}[t]{0.48\linewidth}
+\begin{tcolorbox}[enhanced, colback=slate, colframe=slate, boxrule=0pt, arc=3mm, left=4mm, right=4mm, top=3mm, bottom=3mm]
+{\color{electric}\fontsize{7pt}{8pt}\selectfont\bfseries PACKAGE 1}\par\vspace{1pt}
+{\color{white}\fontsize{13pt}{15pt}\selectfont\bfseries Admission Concierge}\par\vspace{2pt}
+{\color{electric}\fontsize{22pt}{24pt}\selectfont\bfseries €1\,950}\par\vspace{1pt}
+{\color{muted}\fontsize{7.5pt}{9pt}\selectfont Срок: 2–4 месяца}\\[4pt]
+{\color{lightgray}\fontsize{8pt}{10pt}\selectfont
+\cw{Подбор программ (до 5 вузов)}
+\cw{Аудит документов}
+\cw{Подача через платформы вузов}
+\cw{Отслеживание и зачисление}
+\cw{Экстренная поддержка 24/7}
+}
+\end{tcolorbox}
+\end{minipage}\hfill%
+\begin{minipage}[t]{0.48\linewidth}
+\begin{tcolorbox}[enhanced, colback=coral, colframe=coral, boxrule=0pt, arc=3mm, left=4mm, right=4mm, top=3mm, bottom=3mm]
+{\color{white}\fontsize{7pt}{8pt}\selectfont\bfseries PACKAGE 2}\par\vspace{1pt}
+{\color{white}\fontsize{13pt}{15pt}\selectfont\bfseries Full Package}\par\vspace{2pt}
+{\color{white}\fontsize{22pt}{24pt}\selectfont\bfseries €2\,340}\par\vspace{1pt}
+{\color{white!85!coral}\fontsize{7.5pt}{9pt}\selectfont Срок: 2 года}\\[4pt]
+{\color{white}\fontsize{8pt}{10pt}\selectfont
+\cw{Всё из Package 1, плюс:}
+\cw{Стипендия DSU/EDISU + ISEE}
+\cw{Codice Fiscale + банк. счёт}
+\cw{Сопровождение весь срок}
+\cw{Стипендия: €7K/год + общежитие}
+}
+\end{tcolorbox}
+\end{minipage}
+
+\end{adjustwidth}
+
+% ─── Footer ───
+\begin{tikzpicture}[remember picture, overlay]
+  \draw[lightgray, line width=0.3pt] ([yshift=15mm, xshift=12mm]current page.south west) -- ([yshift=15mm, xshift=-12mm]current page.south east);
+  \node[anchor=west, text=grayT, font=\fontsize{7pt}{8pt}\selectfont] at ([yshift=12mm, xshift=12mm]current page.south west)
+    {Edupath Education · Партнёрское предложение · Август 2026};
+  \node[anchor=east, text=grayT, font=\fontsize{7pt}{8pt}\selectfont] at ([yshift=12mm, xshift=-12mm]current page.south east)
+    {Стр. 2 / 3};
+\end{tikzpicture}
+
+\newpage
+
+% ═════ PAGE 3: Process + Payment + Contact ═════
+\begin{tikzpicture}[remember picture, overlay]
+  \shade[top color=navy, bottom color=ink]
+    (current page.north west) rectangle ([yshift=-16mm]current page.north east);
+  \shade[left color=electric, right color=magenta]
+    ([yshift=-16mm]current page.north west) rectangle ([yshift=-16.6mm]current page.north east);
+\end{tikzpicture}
+
+\vspace*{2mm}
+\begin{adjustwidth}{12mm}{12mm}
+{\fontsize{14pt}{16pt}\selectfont\bfseries\color{white}Edupath {\color{electric}Education}}
+\hfill
+{\color{muted}\fontsize{8pt}{10pt}\selectfont Процесс · Оплата · Контакт}
+\end{adjustwidth}
+
+\vspace{6mm}
+\begin{adjustwidth}{12mm}{12mm}
+
+% ─── Process ───
+{\fontsize{12pt}{14pt}\selectfont\bfseries\color{navy}\sectbar~Процесс}
+
+\vspace{3mm}
+\noindent\begin{tabularx}{\linewidth}{@{}X X X X@{}}
+  \begin{tcolorbox}[enhanced, colback=navy, colframe=navy, boxrule=0pt, arc=2mm, left=2.5mm, right=2.5mm, top=3mm, bottom=3mm, halign=center]
+    {\color{electric}\fontsize{20pt}{22pt}\selectfont\bfseries 1}\par\vspace{1pt}
+    {\color{white}\bfseries\scriptsize Консультация}\par\vspace{1pt}
+    {\color{muted}\tiny Подбор 3–5 программ, аудит}\par\vspace{2pt}
+    {\color{electric}\bfseries\small 30\%}
+  \end{tcolorbox} &
+  \begin{tcolorbox}[enhanced, colback=navy, colframe=navy, boxrule=0pt, arc=2mm, left=2.5mm, right=2.5mm, top=3mm, bottom=3mm, halign=center]
+    {\color{lime}\fontsize{20pt}{22pt}\selectfont\bfseries 2}\par\vspace{1pt}
+    {\color{white}\bfseries\scriptsize Подача}\par\vspace{1pt}
+    {\color{muted}\tiny Universitaly, зачисление}\par\vspace{2pt}
+    {\color{lime}\bfseries\small 30\%}
+  \end{tcolorbox} &
+  \begin{tcolorbox}[enhanced, colback=navy, colframe=navy, boxrule=0pt, arc=2mm, left=2.5mm, right=2.5mm, top=3mm, bottom=3mm, halign=center]
+    {\color{coral}\fontsize{20pt}{22pt}\selectfont\bfseries 3}\par\vspace{1pt}
+    {\color{white}\bfseries\scriptsize Стипендия + виза}\par\vspace{1pt}
+    {\color{muted}\tiny DSU/EDISU, ISEE, виза}\par\vspace{2pt}
+    {\color{coral}\bfseries\small 40\%}
+  \end{tcolorbox} &
+  \begin{tcolorbox}[enhanced, colback=navy, colframe=navy, boxrule=0pt, arc=2mm, left=2.5mm, right=2.5mm, top=3mm, bottom=3mm, halign=center]
+    {\color{amber}\fontsize{20pt}{22pt}\selectfont\bfseries 4}\par\vspace{1pt}
+    {\color{white}\bfseries\scriptsize Прилёт}\par\vspace{1pt}
+    {\color{muted}\tiny Жильё, адаптация, старт}\par\vspace{2pt}
+    {\color{amber}\bfseries\small ✓}
+  \end{tcolorbox}
+\end{tabularx}
+
+\vspace{5mm}
+{\fontsize{12pt}{14pt}\selectfont\bfseries\color{navy}\sectbar~Структура оплаты}
+
+\vspace{3mm}
+\noindent\begin{tabularx}{\linewidth}{@{}X X X@{}}
+  \begin{tcolorbox}[enhanced, colback=white, colframe=electric, boxrule=0pt, leftrule=3pt, arc=2mm, left=4mm, right=4mm, top=3mm, bottom=3mm, halign=center]
+    {\color{electric}\fontsize{28pt}{30pt}\selectfont\bfseries 30\%}\par\vspace{1pt}
+    {\color{darktext}\bfseries\small При подписании}\par\vspace{1pt}
+    {\color{grayT}\scriptsize Подбор программ, аудит}
+  \end{tcolorbox} &
+  \begin{tcolorbox}[enhanced, colback=white, colframe=limeD, boxrule=0pt, leftrule=3pt, arc=2mm, left=4mm, right=4mm, top=3mm, bottom=3mm, halign=center]
+    {\color{limeD}\fontsize{28pt}{30pt}\selectfont\bfseries 30\%}\par\vspace{1pt}
+    {\color{darktext}\bfseries\small После зачисления}\par\vspace{1pt}
+    {\color{grayT}\scriptsize Переход к стипендии и визе}
+  \end{tcolorbox} &
+  \begin{tcolorbox}[enhanced, colback=white, colframe=coral, boxrule=0pt, leftrule=3pt, arc=2mm, left=4mm, right=4mm, top=3mm, bottom=3mm, halign=center]
+    {\color{coral}\fontsize{28pt}{30pt}\selectfont\bfseries 40\%}\par\vspace{1pt}
+    {\color{darktext}\bfseries\small При подаче на визу}\par\vspace{1pt}
+    {\color{grayT}\scriptsize Виза, Codice Fiscale, прилёт}
+  \end{tcolorbox}
+\end{tabularx}
+
+\vspace{3mm}
+\begin{tcolorbox}[enhanced, colback=offwhite, colframe=amber, boxrule=0pt, leftrule=3pt, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+{\color{amber}\bfseries\small Комиссия партнёру:} {\color{darktext}\small 15\% от стоимости пакета за каждого зачисленного студента. Выплата в течение 30 дней. Оплата в евро, банковский перевод.}
+\end{tcolorbox}
+
+\vspace{4mm}
+{\fontsize{12pt}{14pt}\selectfont\bfseries\color{navy}\sectbar~Дополнительные услуги}
+
+\vspace{2mm}
+\noindent\begin{tabularx}{\linewidth}{@{}X X X X@{}}
+  \begin{tcolorbox}[enhanced, colback=offwhite, colframe=offwhite, boxrule=0pt, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, halign=center]
+    {\color{electric}\bfseries\small Поиск жилья}\par\vspace{1pt}
+    {\color{electric}\fontsize{14pt}{16pt}\selectfont\bfseries €455}
+  \end{tcolorbox} &
+  \begin{tcolorbox}[enhanced, colback=offwhite, colframe=offwhite, boxrule=0pt, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, halign=center]
+    {\color{limeD}\bfseries\small Аэропорт}\par\vspace{1pt}
+    {\color{limeD}\fontsize{14pt}{16pt}\selectfont\bfseries €130}
+  \end{tcolorbox} &
+  \begin{tcolorbox}[enhanced, colback=offwhite, colframe=offwhite, boxrule=0pt, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, halign=center]
+    {\color{amber}\bfseries\small Адаптация}\par\vspace{1pt}
+    {\color{amber}\fontsize{14pt}{16pt}\selectfont\bfseries €520}
+  \end{tcolorbox} &
+  \begin{tcolorbox}[enhanced, colback=offwhite, colframe=offwhite, boxrule=0pt, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm, halign=center]
+    {\color{magenta}\bfseries\small TOLC/IMAT}\par\vspace{1pt}
+    {\color{magenta}\fontsize{14pt}{16pt}\selectfont\bfseries €390}
+  \end{tcolorbox}
+\end{tabularx}
+
+\vspace{4mm}
+\begin{tcolorbox}[enhanced, colback=slate, colframe=slate, boxrule=0pt, arc=2mm, left=4mm, right=4mm, top=3mm, bottom=3mm]
+{\color{amber}\bfseries\small\faDatabase}\ {\color{amber}\bfseries\small База данных университетов}\par\vspace{1pt}
+{\color{lightgray}\scriptsize Собственная база итальянских университетов, программ, требований и стипендий. Доступна партнёру как дополнительная услуга — по запросу.}
+\end{tcolorbox}
+
+\vspace{6mm}
+% ─── Contact ───
+\begin{tcolorbox}[enhanced, colback=navy, colframe=navy, boxrule=0pt, arc=3mm, left=5mm, right=5mm, top=4mm, bottom=4mm]
+{\color{electric}\fontsize{10pt}{12pt}\selectfont\bfseries СВЯЖИТЕСЬ С НАМИ}\par\vspace{3pt}
+{\color{white}\fontsize{14pt}{16pt}\selectfont\bfseries Anar Hasanov}\par\vspace{1pt}
+{\color{muted}\small Edupath Education · Италия, Lazio · Via Roma 37, Italy}\par\vspace{1pt}
+{\color{muted}\small +39 3280810631 · hasanov.anar.2023@gmail.com}
+\end{tcolorbox}
+
+\end{adjustwidth}
+
+% ─── Footer ───
+\begin{tikzpicture}[remember picture, overlay]
+  \draw[lightgray, line width=0.3pt] ([yshift=15mm, xshift=12mm]current page.south west) -- ([yshift=15mm, xshift=-12mm]current page.south east);
+  \node[anchor=west, text=grayT, font=\fontsize{7pt}{8pt}\selectfont] at ([yshift=12mm, xshift=12mm]current page.south west)
+    {Edupath Education · Партнёрское предложение · Август 2026};
+  \node[anchor=east, text=grayT, font=\fontsize{7pt}{8pt}\selectfont] at ([yshift=12mm, xshift=-12mm]current page.south east)
+    {Стр. 3 / 3};
+\end{tikzpicture}
+
+\end{document}
