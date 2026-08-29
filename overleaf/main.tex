@@ -1,0 +1,664 @@
+% Edupath Education — B2B Partner Presentation
+% OVERLEAF VERSION — compile with XeLaTeX
+% Bilingual: English + Russian
+% Simple black & white
+
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\setotherlanguage{russian}
+
+\IfFontExistsTF{Noto Sans}{%
+  \setsansfont{Noto Sans}
+  \setmainfont{Noto Sans}
+  \newfontfamily\cyrillicfont{Noto Sans}
+  \newfontfamily\cyrillicfontsf{Noto Sans}
+}{%
+  \IfFontExistsTF{Arial}{%
+    \setsansfont{Arial}
+    \setmainfont{Arial}
+    \newfontfamily\cyrillicfont{Arial}
+    \newfontfamily\cyrillicfontsf{Arial}
+  }{%
+    \setsansfont{Helvetica Neue}
+    \setmainfont{Helvetica Neue}
+    \newfontfamily\cyrillicfont{Helvetica Neue}
+    \newfontfamily\cyrillicfontsf{Helvetica Neue}
+  }
+}
+
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta}
+
+% Theme — minimal
+\usetheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+\setbeamersize{text margin left=10mm, text margin right=10mm}
+
+% Black & white only
+\setbeamercolor{frametitle}{fg=black, bg=white}
+\setbeamercolor{title}{fg=black}
+\setbeamercolor{structure}{fg=black}
+\setbeamercolor{alerted text}{fg=black}
+\setbeamercolor{itemize item}{fg=black}
+\setbeamercolor{itemize subitem}{fg=black}
+\setbeamercolor{enumerate item}{fg=black}
+
+% Font sizes — small to prevent overflow
+\setbeamerfont{frametitle}{size=\large, series=\bfseries}
+\setbeamerfont{normal text}{size=\small}
+\setbeamerfont{itemize/enumerate body}{size=\small}
+\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+
+% Russian helper — inherits surrounding size, italic
+\newcommand{\ru}[1]{{\textit{#1}}}
+% Russian helper — tiny (for dense slides)
+\newcommand{\rut}[1]{{\tiny\textit{#1}}}
+
+% Compact itemize
+\setlength{\topsep}{0pt}
+\setlength{\partopsep}{0pt}
+\setlength{\parsep}{0pt}
+
+% Frame title with Russian subtitle
+\newcommand{\biframe}[2]{\begin{frame}{#1}\noindent{\scriptsize\textit{#2}}\vspace{0.2em}}
+
+\title{\textbf{Edupath Education}}
+\subtitle{University Admission to Italy}
+\author{Anar Hasanov}
+\institute{Edupath Education \quad|\quad Italy, Lazio}
+\date{August 2026}
+
+\begin{document}
+
+% ═══════════════════════════════════════════════════════════════
+% SLIDE 1 — TITLE
+% ═══════════════════════════════════════════════════════════════
+\begin{frame}[plain]
+\centering
+\vfill
+{\Large\textbf{Edupath Education}}\\[0.3em]
+{\normalsize University Admission to Italy}\\[0.2em]
+{\ru{Поступление в университеты Италии}}\\[1em]
+{\small Service Packages \& Partnership Proposal}\\[0.2em]
+{\ru{Партнёрское предложение}}\\[1.5em]
+{\small\textbf{Anar Hasanov}}\\[0.1em]
+{\ru{Анар Гасанов}}\\[0.3em]
+{\footnotesize Edupath Education \quad|\quad Italy, Lazio}\\[0.1em]
+{\ru{Италия, Лацио}}\\[0.5em]
+{\footnotesize August 2026}
+\vfill
+\end{frame}
+
+% ═══════════════════════════════════════════════════════════════
+% SLIDE 2 — ABOUT
+% ═══════════════════════════════════════════════════════════════
+\biframe{About Edupath Education}{О компании}
+\footnotesize
+\begin{columns}[T]
+\column{0.58\textwidth}
+\textbf{Who we are} \ru{О нас}\\
+Consulting company based in Italy. We place international graduates into Italian universities via a direct university channel.\\
+\ru{Консалтинговая компания в Италии. Мы занимаемся поступлением иностранных выпускников в итальянские университеты по прямому каналу.}
+
+\textbf{Our Advantages} \ru{Наши преимущества}
+\begin{itemize}\setlength{\itemsep}{0pt}
+  \item Based in Italy — direct university access
+  \item DSU/EDISU scholarship specialists
+  \item \textbf{Direct university channel} — exams \& admissions
+  \item Full-duration support — application to diploma
+  \item 24/7 emergency support
+\end{itemize}
+
+\column{0.38\textwidth}
+\vspace{0.1em}
+\centering
+\begin{tabular}{c}
+\textbf{\normalsize 30}\\
+\footnotesize Students / year\\
+\ru{Студентов в год}\\[0.4em]
+\textbf{\normalsize 95\%}\\
+\footnotesize Admission rate\\
+\ru{Уровень зачисления}\\[0.4em]
+\textbf{\normalsize 90\%}\\
+\footnotesize Scholarship rate\\
+\ru{Стипендия DSU/EDISU}
+\end{tabular}
+\end{columns}
+\end{frame}
+
+% ═══════════════════════════════════════════════════════════════
+% SLIDE 3 — WHY STUDY IN ITALY (STUDENT BENEFITS)
+% ═══════════════════════════════════════════════════════════════
+\biframe{Why Study in Italy? — Student Benefits}{Зачем учиться в Италии}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\textbf{Academic Excellence} \ru{Академическое превосходство}
+\begin{itemize}\setlength{\itemsep}{0pt}
+  \item European diploma — recognized worldwide
+  \item High-level professors — top research groups
+\end{itemize}
+
+\vspace{0.2em}
+\textbf{Career \& Network} \ru{Карьера и сеть контактов}
+\begin{itemize}\setlength{\itemsep}{0pt}
+  \item International network — lifelong contacts
+  \item European experience on CV
+  \item Post-study work visa — stay in EU
+\end{itemize}
+
+\column{0.48\textwidth}
+\textbf{Beyond the Classroom} \ru{За пределами аудитории}
+\begin{itemize}\setlength{\itemsep}{0pt}
+  \item Work experience — internships during studies
+  \item Conferences, grants, EU programs
+  \item Learn Italian — 2nd language for CV
+\end{itemize}
+
+\vspace{0.2em}
+\textbf{Global Mobility} \ru{Глобальная мобильность}
+\begin{itemize}\setlength{\itemsep}{0pt}
+  \item Erasmus+ exchange — 30+ EU countries
+  \item Exchange in USA, Canada and beyond
+  \item Post-study work visa — stay in EU
+\end{itemize}
+\end{columns}
+\end{frame}
+
+% ═══════════════════════════════════════════════════════════════
+% SLIDE 4 — WHY A MASTER'S DEGREE IN ITALY (NEW)
+% ═══════════════════════════════════════════════════════════════
+\begin{frame}{Why a Master's Degree in Italy?}
+\noindent\ru{Преимущества магистратуры в Италии}\vspace{0.1em}
+{\tiny
+\setlength{\parskip}{0pt}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\textbf{Prestige \& Recognition} \rut{Престиж и признание}
+\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+  \item Master's from Italy — \textbf{exceptional prestige worldwide}
+  \item European diploma recognized across EU and globally
+  \item Strengthens CV — international education, adaptability
+\end{itemize}
+
+\textbf{Academic Ecosystem} \rut{Академическая экосистема}
+\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+  \item One of Europe's strongest academic ecosystems
+  \item World-class professors \& research communities
+  \item Thesis supervised by university professors
+  \item \textbf{Opportunities to publish} + labs \& networks
+\end{itemize}
+
+\column{0.48\textwidth}
+\textbf{Complement Your PhD} \rut{Дополнение к аспирантуре}
+\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+  \item Not a separate project — complements PhD studies
+  \item Advanced knowledge applied to doctoral research
+  \item \textbf{Prestige + supervision + publications}
+  \item Lifelong academic connections in Italy \& Europe
+\end{itemize}
+\end{columns}
+}
+\end{frame}
+
+% ═══════════════════════════════════════════════════════════════
+% SLIDE 5 — PARTNERSHIP VALUE (NEW)
+% ═══════════════════════════════════════════════════════════════
+\biframe{Partnership Value — Working Together for University Success}{Ценность партнёрства — совместная работа для университетов}
+\footnotesize
+\textbf{Direct University Collaboration} \ru{Прямое сотрудничество с университетами}
+\begin{itemize}\setlength{\itemsep}{0pt}
+  \item We work \textbf{directly with universities on entrance exam preparation and admissions}
+  \item Partnership \textbf{enhances the university's international profile and diversity}
+  \item We \textbf{pre-screen candidates}: GPA, language, documents, motivation
+  \item ``Exam-ready'' = TOLC/IMAT preparation completed, mock tests passed
+  \item Focus on \textbf{university-relevant subjects only} — no generic prep
+\end{itemize}
+
+\vspace{0.3em}
+\fbox{\parbox{0.95\textwidth}{\scriptsize\textbf{For universities:} a steady stream of prepared international students, reduced administrative burden, increased global visibility, and a prestigious international collaboration.\\
+\ru{Для университетов: постоянный поток подготовленных студентов, снижение административной нагрузки, рост международного престижа и прочные связи.}}}
+\end{frame}
+
+% ═══════════════════════════════════════════════════════════════
+% SLIDE 6 — RESULTS & CASE STUDIES
+% ═══════════════════════════════════════════════════════════════
+\begin{frame}{Results \& Case Studies}
+\noindent\ru{Результаты и кейс-стади}\vspace{0.3em}
+\footnotesize
+\begin{columns}[T]
+\column{0.45\textwidth}
+\textbf{Partner Universities} \ru{Университеты-партнёры}
+\begin{itemize}\setlength{\itemsep}{0pt}
+  \item Università di Bologna
+  \item Università degli Studi di Milano
+  \item Università degli Studi di Padova
+  \item Sapienza Università di Roma
+  \item Politecnico di Milano / Torino
+  \item Università Iuav di Venezia
+  \item Sorbonne / Paris-Saclay (FR)
+  \item TU München / Humboldt (DE)
+  \item University of Warsaw / Jagiellonian (PL)
+\end{itemize}
+\ru{Целевые страны: Азербайджан, Казахстан, СНГ}
+
+\column{0.52\textwidth}
+\textbf{Case Study A} \ru{Кейс А}
+\begin{itemize}\setlength{\itemsep}{0pt}
+  \item Student from Azerbaijan, Economics
+  \item Admitted to Università di Pavia, LM-77
+  \item EDISU Lombardia scholarship approved
+  \item Full support for 2 years
+\end{itemize}
+
+\vspace{0.2em}
+\textbf{Case Study B} \ru{Кейс Б}
+\begin{itemize}\setlength{\itemsep}{0pt}
+  \item Master's in International Relations
+  \item Admitted to Università di Macerata, LM-52
+  \item EDISU Marche scholarship (dorm + stipend)
+  \item Full support package
+\end{itemize}
+\end{columns}
+\end{frame}
+
+% ═══════════════════════════════════════════════════════════════
+% SLIDE 7 — DSU/EDISU SCHOLARSHIPS
+% ═══════════════════════════════════════════════════════════════
+\biframe{DSU/EDISU Scholarships}{Региональные стипендии}
+\textbf{The scholarship covers:} tuition + annual stipend up to €7,000 + accommodation + meals\\[0.1em]
+\ru{Стипендия покрывает: обучение + стипендия до €7,000 + общежитие + питание}
+
+\vspace{0.5em}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\centering
+\textbf{Tuition} \ru{Обучение}\\
+€0 (free)
+
+\vspace{0.5em}
+\textbf{Housing} \ru{Общежитие}\\
+Free dormitory
+
+\column{0.48\textwidth}
+\centering
+\textbf{Stipend} \ru{Стипендия}\\
+Up to €7,000/yr
+
+\vspace{0.5em}
+\textbf{Meals} \ru{Питание}\\
+Meal plan included
+\end{columns}
+
+\vspace{0.5em}
+\textbf{How it works}\\[0.1em]
+\ru{Как это работает}
+\begin{itemize}\setlength{\itemsep}{0pt}
+  \item Eligibility: family income (ISEE) + academic merit — assessed upfront
+  \item We handle ISEE preparation, submission, appeals, and annual renewal
+  \item \textbf{If denied:} appeal within 30 days → alternative region → backup: discounted tuition
+  \item ISEE assistance included in all packages — no hidden costs
+\end{itemize}
+\end{frame}
+
+% ═══════════════════════════════════════════════════════════════
+% SLIDE 8 — SERVICE PACKAGES
+% ═══════════════════════════════════════════════════════════════
+\biframe{Service Packages}{Пакеты услуг}
+\scriptsize
+\begin{columns}[T]
+\column{0.48\textwidth}
+\textbf{Package 1 — Admission Concierge}\\[0.1em]
+\ru{Пакет 1 — Консьерж поступления}\\[0.2em]
+\textbf{\large €1,950} \quad\small(2–4 months)
+
+\vspace{0.15em}
+\begin{itemize}\setlength{\itemsep}{0pt}
+  \item[\checkmark] Program selection (up to 5 universities)
+  \item[\checkmark] Document audit \& submission
+  \item[\checkmark] Application tracking \& admission confirmation
+  \item[\checkmark] Visa application assistance
+  \item[\checkmark] Health insurance arrangement
+  \item[\checkmark] DSU/EDISU scholarship assistance
+  \item[\checkmark] Codice Fiscale + bank account
+  \item[\checkmark] 24/7 emergency support
+\end{itemize}
+
+\column{0.48\textwidth}
+\textbf{Package 2 — Full Package}\\[0.1em]
+\ru{Пакет 2 — Полный пакет}\\[0.2em]
+\textbf{\large €2,340} \quad\small(entire degree)
+
+\vspace{0.15em}
+\begin{itemize}\setlength{\itemsep}{0pt}
+  \item[\checkmark] Program selection (up to 5 universities)
+  \item[\checkmark] Document audit \& submission
+  \item[\checkmark] Visa + health insurance + post-arrival
+  \item[\checkmark] DSU/EDISU scholarship + ISEE + renewal
+  \item[\checkmark] Codice Fiscale + bank account
+  \item[\checkmark] Residence permit (Permesso)
+  \item[\checkmark] Full support: application to graduation
+  \item[\checkmark] 24/7 emergency support
+\end{itemize}
+\end{columns}
+\end{frame}
+
+% ═══════════════════════════════════════════════════════════════
+% SLIDE 9 — ADD-ONS & COST
+% ═══════════════════════════════════════════════════════════════
+\biframe{Add-on Services}{Дополнительные услуги}
+\begin{itemize}\setlength{\itemsep}{0.3em}
+  \item \textbf{Housing search} — €455\\
+    \ru{Поиск жилья}
+  \item \textbf{Airport pickup} — €130\\
+    \ru{Встреча в аэропорту}
+  \item \textbf{Adaptation package} — €520\\
+    \ru{Адаптационный пакет}
+  \item \textbf{Entrance exam preparation} — €390\\
+    \ru{Подготовка к вступительным экзаменам}
+\end{itemize}
+\end{frame}
+
+% ═══════════════════════════════════════════════════════════════
+% SLIDE 10 — SAFETY & SUPPORT (SIMPLIFIED)
+% ═══════════════════════════════════════════════════════════════
+\biframe{Safety \& Emergency Support}{Безопасность и поддержка}
+\textbf{24/7 Hotline: +39 328 081 0613}\\[0.1em]
+\ru{Горячая линия 24/7 — для студентов и родителей}
+
+\vspace{0.4em}
+\begin{columns}[T]
+\column{0.31\textwidth}
+\textbf{Local Representation}\\
+\ru{Локальный контакт}\\[0.1em]
+\footnotesize Edupath representative in every university city.\\
+\ru{Представитель в каждом городе.}
+
+\column{0.31\textwidth}
+\textbf{Parent Updates}\\
+\ru{Информация родителям}\\[0.1em]
+\footnotesize Progress reports every 2 weeks.\\
+\ru{Обновления каждые 2 недели.}
+
+\column{0.31\textwidth}
+\textbf{Emergency Response}\\
+\ru{Экстренный запрос}\\[0.1em]
+\footnotesize Response within 2 hours, 24/7.\\
+\ru{Реакция в течение 2 часов.}
+\end{columns}
+
+\vspace{0.3em}
+\footnotesize
+\textbf{Complaints Procedure:} Written complaint → review within 5 days → escalation to Anar Hasanov. \ru{Жалобы: письменно → обзор за 5 дней → эскалация.}\\
+\textbf{Document Storage:} Student retains all originals. Edupath keeps digital copies only. \ru{Документы: оригиналы у студента.}
+\end{frame}
+
+% ═══════════════════════════════════════════════════════════════
+% SLIDE 11 — PARTNERSHIP TERMS (SIMPLIFIED)
+% ═══════════════════════════════════════════════════════════════
+\biframe{Partnership Terms \& Legal Framework}{Условия партнёрства и правовая база}
+{\tiny
+\begin{columns}[T]
+\column{0.48\textwidth}
+\textbf{Commission} \rut{Комиссия}: \textbf{15\%} of package price per admitted student
+
+\textbf{Payment Terms} \rut{Условия оплаты}
+\begin{itemize}\setlength{\itemsep}{0pt}
+  \item Student: 30\% on signing, 30\% after admission \& before visa, 40\% after arrival
+  \item Partner commission: within 30 days
+  \item Payment in EUR via bank transfer
+  \item Escrow option available on request
+\end{itemize}
+
+\textbf{Refund Policy} \rut{Возврат} — within 30 days
+\begin{itemize}\setlength{\itemsep}{0pt}
+  \item Not admitted: 100\% minus €195
+  \item No scholarship: 50\% of Package 2
+  \item Student's fault: no refund
+  \item Force majeure: 100\% refund
+\end{itemize}
+
+\column{0.48\textwidth}
+\textbf{Legal Framework} \rut{Правовая база}
+\begin{itemize}\setlength{\itemsep}{0pt}
+  \item Formal MOU + annex; 2-week review period
+  \item Italian law, jurisdiction: Italy
+  \item GDPR + Italian privacy law (D.Lgs. 196/03)
+  \item Professional liability insurance maintained
+  \item Exclusivity: per partner's country
+  \item Term: 1 year, auto-renewable
+  \item Termination: 30-day written notice
+  \item Force majeure: disasters, pandemics, war
+\end{itemize}
+\end{columns}
+}
+\end{frame}
+
+% ═══════════════════════════════════════════════════════════════
+% SLIDE 12 — OUR PROCESS (NEW)
+% ═══════════════════════════════════════════════════════════════
+\biframe{Our Process — From Application to Arrival}{Наш процесс — от заявки до прибытия}
+{\tiny
+\begin{columns}[T]
+\column{0.48\textwidth}
+\textbf{Pre-screening} \rut{Предварительный отбор}
+\begin{itemize}\setlength{\itemsep}{0pt}
+  \item GPA verification + document audit
+  \item Language proficiency assessment
+  \item Motivation letter review
+  \item ``Exam-ready'' = TOLC/IMAT prep completed
+\end{itemize}
+
+\textbf{Visa \& Pre-arrival} \rut{Виза и подготовка}
+\begin{itemize}\setlength{\itemsep}{0pt}
+  \item Visa application assistance (Type D)
+  \item Health insurance (€150–€350/yr)
+  \item Pre-departure briefing for students \& parents
+\end{itemize}
+
+\column{0.48\textwidth}
+\textbf{If Scholarship Is Denied} \rut{Если стипендия отклонена}
+\begin{itemize}\setlength{\itemsep}{0pt}
+  \item ISEE appeal filed within 30 days
+  \item Alternative: regional fund in another region
+  \item Backup: discounted tuition (€1,000–€3,500/yr)
+  \item Refund: 50\% of Package 2 fee
+\end{itemize}
+
+\textbf{Post-arrival Support} \rut{Поддержка после приезда}
+\begin{itemize}\setlength{\itemsep}{0pt}
+  \item Airport pickup, orientation, bank account
+  \item Residence permit (Permesso di Soggiorno)
+  \item University enrollment confirmation
+  \item Student retains all original documents
+\end{itemize}
+\end{columns}
+}
+\end{frame}
+
+% ═══════════════════════════════════════════════════════════════
+% SLIDE 13 — SLA (SIMPLIFIED)
+% ═══════════════════════════════════════════════════════════════
+\biframe{Service Level Agreement}{Соглашение об уровне услуг}
+\begin{columns}[T]
+\column{0.55\textwidth}
+\textbf{SLA Commitments}\\[0.1em]
+\ru{Обязательства}
+
+\vspace{0.3em}
+{\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\raggedright\arraybackslash}p{3cm} >{\raggedright\arraybackslash}p{3.5cm}}
+\toprule
+\textbf{Parameter} & \textbf{Commitment} \\
+\midrule
+Student inquiry & Within 48 hours (business days) \\
+Parent inquiry & Within 24 hours (business days) \\
+Emergency request & Within 2 hours (24/7 incl. weekends) \\
+Escalation & Direct to Anar Hasanov \\
+Complaints & Review within 5 business days \\
+\bottomrule
+\end{tabular}
+}
+
+\column{0.42\textwidth}
+\textbf{Pilot Program}\\[0.1em]
+\ru{Пилотный проект}
+
+\vspace{0.3em}
+\footnotesize 3–5 students, free introductory session.\\
+No obligations, no fees.\\
+Duration: 1 intake cycle.\\
+\ru{3–5 студентов, бесплатно, без обязательств.}
+\end{columns}
+\end{frame}
+
+% ═══════════════════════════════════════════════════════════════
+% SLIDE 13 — REQUIREMENTS
+% ═══════════════════════════════════════════════════════════════
+\begin{frame}{Admission Requirements}
+\noindent\ru{Требования}\vspace{0.2em}
+\footnotesize
+\textbf{Requirements} \ru{Требования}
+
+{\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.0}
+\begin{tabular}{>{\raggedright\arraybackslash}p{4cm} >{\raggedright\arraybackslash}p{6cm}}
+\toprule
+\textbf{Requirement} & \textbf{Details} \\
+\midrule
+GPA (Bachelor's) & Min 75/100 or 3.0/4.0 \\
+GPA (Master's) & Min 80/100 or 3.2/4.0 \\
+English (EN programs) & IELTS 6.0–6.5 / TOEFL 80–90 \\
+Italian (IT programs) & B2 — CILS, CELI, or PLIDA \\
+GMAT/GRE & Some business programs \\
+Portfolio & Architecture \& design \\
+Motivation letter & Most Master's programs \\
+\bottomrule
+\end{tabular}
+}
+\end{frame}
+
+% ═══════════════════════════════════════════════════════════════
+% SLIDE 14 — PARTNER UNIVERSITIES (ARCH & DESIGN) — WITH LOGOS
+% ═══════════════════════════════════════════════════════════════
+\biframe{Partner Universities — Architecture \& Design}{Архитектура и Дизайн}
+\begin{columns}[T]
+\column{0.48\textwidth}
+{\tiny
+\begin{tabular}{@{}c l@{\hspace{0.3em}}}
+\includegraphics[bb=0 0 131 43,height=10pt]{polimi.png} & Politecnico di Milano \\
+[0.4em]
+\includegraphics[bb=0 0 80 34,height=10pt]{polito.png} & Politecnico di Torino \\
+[0.4em]
+\includegraphics[bb=0 0 80 36,height=10pt]{firenze.png} & Università di Firenze \\
+[0.4em]
+\includegraphics[bb=0 0 80 24,height=10pt]{sapienza.png} & Sapienza — Università di Roma \\
+[0.4em]
+\includegraphics[bb=0 0 764 400,height=10pt]{bologna.png} & Università di Bologna \\
+\end{tabular}
+}
+
+\column{0.48\textwidth}
+{\tiny
+\begin{tabular}{@{}c l@{\hspace{0.3em}}}
+\includegraphics[bb=0 0 80 28,height=10pt]{ied.png} & IED — Istituto Europeo di Design \\
+[0.4em]
+\includegraphics[bb=0 0 80 22,height=10pt]{naba.png} & NABA — Nuova Accademia di Belle Arti \\
+[0.4em]
+\includegraphics[bb=0 0 80 55,height=10pt]{domus.png} & Domus Academy \\
+[0.4em]
+\includegraphics[bb=0 0 22 80,height=10pt]{iuav.png} & Università Iuav di Venezia \\
+[0.4em]
+\includegraphics[bb=0 0 80 31,height=10pt]{spd.png} & SPD — Scuola Politecnica di Design \\
+\end{tabular}
+}
+\end{columns}
+\end{frame}
+
+% ═══════════════════════════════════════════════════════════════
+% SLIDE 15 — PARTNER UNIVERSITIES (BUSINESS)
+% ═══════════════════════════════════════════════════════════════
+\biframe{Partner Universities — Business \& Economics}{Бизнес и Экономика}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\begin{itemize}\setlength{\itemsep}{0pt}
+  \item Bocconi University
+  \item LUISS Guido Carli
+  \item Università di Bologna
+  \item Università Cattolica del Sacro Cuore
+  \item Ca' Foscari University of Venice
+\end{itemize}
+
+\column{0.48\textwidth}
+\begin{itemize}\setlength{\itemsep}{0pt}
+  \item Università di Padova
+  \item Sapienza Università di Roma
+  \item Università di Pavia
+  \item Università di Perugia
+\end{itemize}
+\end{columns}
+
+\vspace{0.5em}
+\textbf{Also available:} IT Management, Law, Foreign Languages, Engineering, Fashion\\
+\ru{Также: IT-менеджмент, Право, Языки, Инженерия, Fashion}
+\end{frame}
+
+% ═══════════════════════════════════════════════════════════════
+% SLIDE 16 — NEXT STEPS (SIMPLIFIED)
+% ═══════════════════════════════════════════════════════════════
+\biframe{Next Steps}{Следующие шаги}
+\begin{columns}[T]
+\column{0.48\textwidth}
+\begin{enumerate}\setlength{\itemsep}{0.2em}
+  \item \textbf{Partner discusses proposal with management}\\
+    \ru{Партнёр обсуждает с руководством}
+  \item \textbf{Partner identifies 3–5 interested graduates}\\
+    \ru{Партнёр определяет 3–5 выпускников}
+  \item \textbf{Free introductory online session}\\
+    \ru{Бесплатная ознакомительная сессия}
+  \item \textbf{Sign formal MOU}\\
+    \ru{Подписание официального соглашения}
+\end{enumerate}
+
+\column{0.48\textwidth}
+\begin{enumerate}\setcounter{enumi}{4}\setlength{\itemsep}{0.2em}
+  \item \textbf{Students choose package} — document prep (Nov–Dec 2026)\\
+    \ru{Студенты выбирают пакет}
+  \item \textbf{Universitaly registration} (Jan–Feb 2027)\\
+    \ru{Регистрация на Universitaly}
+  \item \textbf{Submission to Italian universities} (Feb–Apr 2027)\\
+    \ru{Подача в итальянские университеты}
+  \item \textbf{Next meeting} — 4–6 weeks after receiving this document\\
+    \ru{Следующая встреча — через 4–6 недель}
+\end{enumerate}
+\end{columns}
+\end{frame}
+
+% ═══════════════════════════════════════════════════════════════
+% SLIDE 17 — CONTACT
+% ═══════════════════════════════════════════════════════════════
+\begin{frame}[plain]
+\vfill
+\centering
+{\Large\textbf{Let's Build the Path Together}}\\[0.3em]
+{\large\textit{Давайте строить путь вместе}}\\[1.5em]
+{\normalsize\textbf{Anar Hasanov}}\\[0.1em]
+{\ru{Анар Гасанов}}\\[0.5em]
+{\small Edupath Education \quad|\quad Italy, Lazio}\\[0.1em]
+{\ru{Италия, Лацио}}\\[0.8em]
+{\small Legal address: Via Roma 37, Italy}\\[0.3em]
+{\small Email: hasanov.anar.2023@gmail.com}\\[0.3em]
+{\small Phone: +39 328 081 0631}\\[0.3em]
+{\small Emergency line: +39 328 081 0613}
+\vfill
+\end{frame}
+
+\end{document}
