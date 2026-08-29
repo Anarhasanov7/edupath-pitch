@@ -887,6 +887,42 @@
     .ed-table { font-size: 12px; }
     .ed-table th, .ed-table td { padding: 10px 12px; }
   }
+  /* ─── University partner logos ─── */
+  .uni-section {
+    background: #fff;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    margin-top: 24px;
+  }
+  .uni-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+  }
+  .uni-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px 14px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.06);
+    display: flex; flex-direction: column; align-items: center; min-height: 140px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .uni-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  .uni-card img {
+    height: 56px; width: auto; max-width: 100%;
+    object-fit: contain; margin-bottom: 10px;
+  }
+  .uni-card .name { font-size: 12px; font-weight: 700; color: var(--ink); margin-top: auto; line-height: 1.3; }
+  .uni-card .country { font-size: 10px; color: var(--gray); margin-top: 4px; }
+  @media (max-width: 768px) {
+    .uni-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
 </style>
 </head>
 <body>
@@ -913,8 +949,8 @@
 <div class="hero">
   <div class="hero-content">
     <div class="hero-tag">Партнёрское предложение · Август 2026</div>
-    <h1>Поступление в <span class="grad">университеты Италии</span></h1>
-    <p>Edupath Education — консалтинговая компания в Италии. Мы сопровождаем студентов от подачи документов до получения диплома. Партнёрим с вузами-источниками по прямому университетскому каналу.</p>
+    <h1>Поступление в <span class="grad">университеты Италии и Франции</span></h1>
+    <p>Edupath Education — консалтинговая компания в Италии. Мы сопровождаем студентов от подачи документов до получения диплома. Партнёрим с вузами-источниками по прямому университетскому каналу в Италии и Франции.</p>
     <div class="hero-stats">
       <div class="hero-stat">
         <span class="num">30</span>
@@ -1517,6 +1553,73 @@
 </section>
 
 <!-- ─── CTA ─── -->
+<!-- ─── University Logos ─── -->
+<section id="university-logos" class="fade-in">
+  <div class="section-tag">Вузы-партнёры</div>
+  <div class="section-title">Топ-10 университетов: Италия и Франция</div>
+  <div class="section-sub">Мы работаем напрямую с ведущими вузами двух стран — от PoliMi и Sapienza до Sciences Po и HEC.</div>
+
+  <div class="uni-section">
+    <div class="section-tag" style="margin-bottom: 24px;">Топ-5 Италии</div>
+    <div class="uni-grid" style="margin-bottom: 32px;">
+      <div class="uni-card">
+        <img src="logos/polimi.png" alt="Politecnico di Milano">
+        <div class="name">Politecnico di Milano</div>
+        <div class="country">🇮🇹 Италия</div>
+      </div>
+      <div class="uni-card">
+        <img src="logos/bologna.png" alt="Università di Bologna">
+        <div class="name">Università di Bologna</div>
+        <div class="country">🇮🇹 Италия</div>
+      </div>
+      <div class="uni-card">
+        <img src="logos/sapienza.png" alt="Sapienza Università di Roma">
+        <div class="name">Sapienza Università di Roma</div>
+        <div class="country">🇮🇹 Италия</div>
+      </div>
+      <div class="uni-card">
+        <img src="logos/polito.png" alt="Politecnico di Torino">
+        <div class="name">Politecnico di Torino</div>
+        <div class="country">🇮🇹 Италия</div>
+      </div>
+      <div class="uni-card">
+        <img src="logos/firenze.png" alt="Università degli Studi di Firenze">
+        <div class="name">Università di Firenze</div>
+        <div class="country">🇮🇹 Италия</div>
+      </div>
+    </div>
+
+    <div class="section-tag" style="margin-bottom: 24px;">Топ-5 Франции</div>
+    <div class="uni-grid">
+      <div class="uni-card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/fc/Sorbonne_University_Logo.svg/330px-Sorbonne_University_Logo.svg.png" alt="Sorbonne Université">
+        <div class="name">Sorbonne Université</div>
+        <div class="country">🇫🇷 Франция</div>
+      </div>
+      <div class="uni-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Paris_Institute_of_Political_Studies.png/330px-Paris_Institute_of_Political_Studies.png" alt="Sciences Po">
+        <div class="name">Sciences Po</div>
+        <div class="country">🇫🇷 Франция</div>
+      </div>
+      <div class="uni-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/HEC_Paris.svg/330px-HEC_Paris.svg.png" alt="HEC Paris">
+        <div class="name">HEC Paris</div>
+        <div class="country">🇫🇷 Франция</div>
+      </div>
+      <div class="uni-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/POLYTECHNIQUE-IP_PARIS.png/330px-POLYTECHNIQUE-IP_PARIS.png" alt="École Polytechnique">
+        <div class="name">École Polytechnique</div>
+        <div class="country">🇫🇷 Франция</div>
+      </div>
+      <div class="uni-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Aix_Marseille_Universit%C3%A9_logo_2024.png/330px-Aix_Marseille_Universit%C3%A9_logo_2024.png" alt="Aix-Marseille Université">
+        <div class="name">Aix-Marseille Université</div>
+        <div class="country">🇫🇷 Франция</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contact" class="fade-in">
   <div class="cta-section">
     <h2>Давайте строить путь вместе</h2>
@@ -1535,7 +1638,7 @@
 <footer>
   <div class="brand">Edupath</div>
   <p>Edupath Education · Италия, Lazio · Via Roma 37, Italy<br>
-  Поступление в университеты Италии · Партнёрское предложение · Август 2026</p>
+  Поступление в университеты Италии и Франции · Партнёрское предложение · Август 2026</p>
 </footer>
 
 <script>
