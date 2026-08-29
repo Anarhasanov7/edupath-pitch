@@ -60,7 +60,7 @@
     letter-spacing: -0.5px;
   }
   nav .brand span { color: var(--electric); font-weight: 600; font-size: 14px; }
-  nav ul { display: flex; gap: 28px; list-style: none; }
+  nav ul { display: flex; gap: 20px; list-style: none; }
   nav ul a {
     color: var(--gray); text-decoration: none; font-size: 12px; font-weight: 500;
     transition: color 0.2s;
@@ -595,67 +595,315 @@
     opacity: 1; transform: translateY(0);
   }
 
+  /* ─── Tables ─── */
+  .ed-table {
+    width: 100%; border-collapse: collapse;
+    background: #fff; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    font-size: 13px;
+  }
+  .ed-table thead { background: linear-gradient(135deg, var(--slate), var(--ink)); }
+  .ed-table th {
+    color: #fff; font-weight: 700; text-align: left;
+    padding: 14px 18px; font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .ed-table td {
+    padding: 14px 18px; color: var(--dark);
+    border-bottom: 1px solid var(--light); line-height: 1.5;
+  }
+  .ed-table tr:last-child td { border-bottom: none; }
+  .ed-table tr:hover td { background: rgba(61,223,255,0.04); }
+  .ed-table .num-cell { font-weight: 700; color: var(--electric); }
+  .ed-table .zero { color: var(--lime-d); font-weight: 700; }
+
+  /* ─── Master's / Prestige section ─── */
+  .masters-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    margin-bottom: 32px;
+  }
+  .masters-card {
+    background: #fff; border-radius: 16px; padding: 28px 24px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+    border-top: 4px solid var(--electric);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .masters-card:nth-child(2) { border-top-color: var(--lime-d); }
+  .masters-card:nth-child(3) { border-top-color: var(--coral); }
+  .masters-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+  }
+  .masters-card h4 {
+    font-size: 15px; font-weight: 800; color: var(--ink);
+    margin-bottom: 14px; line-height: 1.3;
+  }
+  .masters-card ul { list-style: none; }
+  .masters-card li {
+    font-size: 12.5px; color: var(--gray); line-height: 1.55;
+    padding: 6px 0 6px 22px; position: relative;
+  }
+  .masters-card li::before {
+    content: '▶'; position: absolute; left: 0; top: 6px;
+    font-size: 9px; color: var(--electric);
+  }
+  .masters-card:nth-child(2) li::before { color: var(--lime-d); }
+  .masters-card:nth-child(3) li::before { color: var(--coral); }
+
+  .masters-banner {
+    background: linear-gradient(135deg, var(--navy), var(--ink));
+    border-radius: 16px; padding: 32px 36px;
+    position: relative; overflow: hidden;
+  }
+  .masters-banner::before {
+    content: ''; position: absolute;
+    top: -40px; right: -40px; width: 180px; height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(61,223,255,0.06) 0%, transparent 70%);
+  }
+  .masters-banner h4 {
+    font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 10px;
+  }
+  .masters-banner p {
+    font-size: 13px; color: var(--gray); line-height: 1.6;
+  }
+  .masters-banner p + p { margin-top: 8px; font-style: italic; }
+
+  /* ─── Partnership value list ─── */
+  .value-list {
+    background: #fff; border-radius: 16px; padding: 28px 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  .value-list ul { list-style: none; }
+  .value-list li {
+    padding: 10px 0 10px 26px; position: relative;
+    font-size: 14px; color: var(--dark); line-height: 1.55;
+    border-bottom: 1px solid var(--light);
+  }
+  .value-list li:last-child { border-bottom: none; }
+  .value-list li::before {
+    content: '▶'; position: absolute; left: 0; top: 12px;
+    font-size: 10px; color: var(--electric);
+  }
+  .value-banner {
+    margin-top: 20px;
+    background: linear-gradient(135deg, var(--navy), var(--ink));
+    border-radius: 16px; padding: 28px 32px;
+    position: relative; overflow: hidden;
+  }
+  .value-banner::before {
+    content: ''; position: absolute;
+    top: -40px; right: -40px; width: 180px; height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(61,223,255,0.06) 0%, transparent 70%);
+  }
+  .value-banner h4 {
+    font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 8px;
+  }
+  .value-banner p {
+    font-size: 13px; color: var(--gray); line-height: 1.6;
+  }
+  .value-banner p + p { margin-top: 6px; font-style: italic; }
+
+  /* ─── Case studies ─── */
+  .case-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  }
+  .case-card {
+    background: #fff; border-radius: 14px; padding: 24px 26px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    border-left: 4px solid var(--electric);
+  }
+  .case-card:nth-child(2) { border-left-color: var(--coral); }
+  .case-card h4 {
+    font-size: 15px; font-weight: 800; color: var(--ink); margin-bottom: 12px;
+  }
+  .case-card ul { list-style: none; }
+  .case-card li {
+    font-size: 13px; color: var(--gray); line-height: 1.5;
+    padding: 5px 0 5px 22px; position: relative;
+  }
+  .case-card li::before {
+    content: '▶'; position: absolute; left: 0; top: 6px;
+    font-size: 9px; color: var(--electric);
+  }
+  .case-card:nth-child(2) li::before { color: var(--coral); }
+
+  /* ─── University list pills ─── */
+  .uni-pills {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;
+  }
+  .uni-pill {
+    background: #fff; border: 1px solid var(--light);
+    border-radius: 20px; padding: 8px 16px;
+    font-size: 12.5px; font-weight: 600; color: var(--dark);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    transition: all 0.2s;
+  }
+  .uni-pill:hover {
+    border-color: var(--electric); color: var(--electric);
+    transform: translateY(-1px);
+  }
+
+  /* ─── Scholarship components ─── */
+  .scholarship-banner {
+    background: linear-gradient(135deg, var(--slate), var(--ink));
+    border-radius: 16px; padding: 28px 32px; text-align: center;
+    margin-bottom: 24px; position: relative; overflow: hidden;
+  }
+  .scholarship-banner::before {
+    content: ''; position: absolute;
+    top: -50px; right: -50px; width: 200px; height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(198,255,61,0.06) 0%, transparent 70%);
+  }
+  .scholarship-banner h4 {
+    font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 6px;
+    position: relative; z-index: 1;
+  }
+  .scholarship-banner p {
+    font-size: 13px; color: var(--lime); font-weight: 600;
+    position: relative; z-index: 1;
+  }
+  .scholarship-banner .sub {
+    font-size: 12px; color: var(--gray); font-style: italic;
+    font-weight: 400; margin-top: 4px;
+  }
+
+  /* ─── Safety section ─── */
+  .safety-banner {
+    background: linear-gradient(135deg, rgba(255,92,61,0.1), rgba(255,92,61,0.03));
+    border: 1px solid rgba(255,92,61,0.2);
+    border-radius: 14px; padding: 24px 28px; text-align: center;
+    margin-bottom: 20px;
+  }
+  .safety-banner .hotline {
+    font-size: 24px; font-weight: 900; color: var(--coral);
+    letter-spacing: 0.5px;
+  }
+  .safety-banner .hotline-label {
+    font-size: 11px; color: var(--gray); margin-top: 4px;
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .safety-banner .sub {
+    font-size: 12px; color: var(--gray); font-style: italic; margin-top: 6px;
+  }
+  .safety-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  }
+  .safety-card {
+    background: #fff; border-radius: 12px; padding: 20px 22px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border-top: 3px solid var(--coral);
+  }
+  .safety-card h4 {
+    font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 6px;
+  }
+  .safety-card p {
+    font-size: 12px; color: var(--gray); line-height: 1.5;
+  }
+
+  /* ─── Partnership terms ─── */
+  .terms-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  }
+  .terms-card {
+    background: #fff; border-radius: 14px; padding: 24px 26px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    border-top: 3px solid var(--electric);
+  }
+  .terms-card:nth-child(2) { border-top-color: var(--lime-d); }
+  .terms-card:nth-child(3) { border-top-color: var(--amber); }
+  .terms-card h4 {
+    font-size: 14px; font-weight: 800; color: var(--ink); margin-bottom: 10px;
+  }
+  .terms-card .big {
+    font-size: 22px; font-weight: 900; color: var(--electric);
+    margin-bottom: 8px; display: block;
+  }
+  .terms-card:nth-child(2) .big { color: var(--lime-d); }
+  .terms-card:nth-child(3) .big { color: var(--amber); font-size: 16px; }
+  .terms-card ul { list-style: none; }
+  .terms-card li {
+    font-size: 12.5px; color: var(--gray); line-height: 1.5;
+    padding: 5px 0 5px 20px; position: relative;
+  }
+  .terms-card li::before {
+    content: '▶'; position: absolute; left: 0; top: 6px;
+    font-size: 9px; color: var(--electric);
+  }
+  .terms-card:nth-child(2) li::before { color: var(--lime-d); }
+  .terms-card:nth-child(3) li::before { color: var(--amber); }
+
+  /* ─── Next steps ─── */
+  .steps-list {
+    background: #fff; border-radius: 16px; padding: 28px 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    counter-reset: step;
+  }
+  .steps-list .step-row {
+    display: flex; gap: 18px; padding: 14px 0;
+    border-bottom: 1px solid var(--light);
+    counter-increment: step;
+  }
+  .steps-list .step-row:last-child { border-bottom: none; }
+  .steps-list .step-num {
+    flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--electric), var(--lime));
+    color: var(--ink); font-weight: 900; font-size: 15px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .steps-list .step-row:nth-child(even) .step-num {
+    background: linear-gradient(135deg, var(--coral), var(--amber));
+    color: #fff;
+  }
+  .steps-list .step-body { flex: 1; }
+  .steps-list .step-body .main {
+    font-size: 14px; font-weight: 700; color: var(--ink); line-height: 1.4;
+  }
+  .steps-list .step-body .sub {
+    font-size: 12px; color: var(--gray); font-style: italic; margin-top: 2px;
+  }
+
+  /* ─── Section note ─── */
+  .section-note {
+    margin-top: 16px; font-size: 12px; color: var(--gray);
+    font-style: italic; text-align: center;
+  }
+
   /* ─── Responsive ─── */
+  @media (max-width: 1100px) {
+    nav ul { display: none; }
+  }
   @media (max-width: 768px) {
     nav ul { display: none; }
     .hero h1 { font-size: 36px; }
-    .benefits-grid, .pkg-grid, .location-grid, .corp-grid { grid-template-columns: 1fr; }
+    .benefits-grid, .pkg-grid, .location-grid, .corp-grid,
+    .case-grid, .masters-grid, .terms-grid, .safety-grid { grid-template-columns: 1fr; }
     .pay-grid, .provide-grid, .why-grid { grid-template-columns: 1fr; }
     .timeline { flex-direction: column; }
     .timeline::before { display: none; }
     section { padding: 60px 20px; }
+    .ed-table { font-size: 12px; }
+    .ed-table th, .ed-table td { padding: 10px 12px; }
   }
-  /* ─── University partners ─── */
-  .uni-section {
-    background: #fff;
-    border-radius: 20px;
-    padding: 32px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-    margin-top: 24px;
-  }
-  .uni-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 18px;
-  }
-  .uni-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 18px 14px;
-    text-align: center;
-    border: 1px solid rgba(0,0,0,0.06);
-    display: flex; flex-direction: column; align-items: center; min-height: 140px;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .uni-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  }
-  .uni-card img {
-    height: 56px; width: auto; max-width: 100%;
-    object-fit: contain; margin-bottom: 10px;
-  }
-  .uni-card .name { font-size: 12px; font-weight: 700; color: var(--ink); margin-top: auto; line-height: 1.3; }
-  .uni-card .country { font-size: 10px; color: var(--gray); margin-top: 4px; }
-  @media (max-width: 768px) {
-    .uni-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-
 </style>
 </head>
 <body>
 
 <!-- ─── Nav ─── -->
 <nav>
-  <div class="brand">Edupath <span>Education</span></div>
+  <div class="brand">Edupath</div>
   <ul>
-    <li><a href="#mission">Миссия</a></li>
-    <li><a href="#benefits">Преимущества</a></li>
+    <li><a href="#about">О нас</a></li>
     <li><a href="#why-italy">Почему Италия</a></li>
+    <li><a href="#masters">Магистратура</a></li>
+    <li><a href="#partnership">Партнёрство</a></li>
+    <li><a href="#results">Результаты</a></li>
+    <li><a href="#scholarship">Стипендии</a></li>
     <li><a href="#packages">Пакеты</a></li>
-    <li><a href="#process">Процесс</a></li>
-    <li><a href="#payment">Оплата</a></li>
-    <li><a href="#location">Локация</a></li>
+    <li><a href="#terms">Условия</a></li>
+    <li><a href="#requirements">Требования</a></li>
     <li><a href="#universities">Вузы</a></li>
   </ul>
   <a href="#contact" class="cta">Связаться</a>
@@ -664,9 +912,9 @@
 <!-- ─── Hero ─── -->
 <div class="hero">
   <div class="hero-content">
-    <div class="hero-tag">Партнёрское предложение · 2026</div>
-    <h1>Ваши студенты —<br>в <span class="grad">университеты Италии и Франции</span></h1>
-    <p>Edupath Education — консалтинговая компания в Италии. Мы сопровождаем студентов от подачи документов до получения диплома. Партнёрим с вузами-источниками по университетскому каналу в Италии и Франции.</p>
+    <div class="hero-tag">Партнёрское предложение · Август 2026</div>
+    <h1>Поступление в <span class="grad">университеты Италии</span></h1>
+    <p>Edupath Education — консалтинговая компания в Италии. Мы сопровождаем студентов от подачи документов до получения диплома. Партнёрим с вузами-источниками по прямому университетскому каналу.</p>
     <div class="hero-stats">
       <div class="hero-stat">
         <span class="num">30</span>
@@ -685,140 +933,216 @@
   <div class="scroll-hint">↓ Листайте вниз</div>
 </div>
 
-<!-- ─── Mission ─── -->
-<section id="mission" class="fade-in">
-  <div class="section-tag">Наша миссия</div>
-  <div class="section-title">Что мы делаем</div>
-  <div class="section-sub">Мы находимся в Италии и работаем с университетами и госорганами лично — не удалённо.</div>
+<!-- ─── About ─── -->
+<section id="about" class="fade-in">
+  <div class="section-tag">О компании</div>
+  <div class="section-title">Edupath Education</div>
+  <div class="section-sub">Консалтинговая компания в Италии. Мы зачисляем иностранных выпускников в итальянские университеты по прямому каналу.</div>
 
   <div class="mission-card">
-    <h3>Миссия Edupath Education</h3>
-    <p>Мы помогаем международным выпускникам получить доступ к <strong>итальянскому и французскому высшему образованию</strong> — от подачи документов до получения диплома. Специализируемся на <strong>региональных стипендиях DSU/EDISU</strong>, которые покрывают обучение, стипендию до €7 000/год, общежитие и питание. Сопровождаем студента <strong>весь срок обучения</strong>, а не только на этапе поступления.</p>
+    <h3>Кто мы такие</h3>
+    <p>Консалтинговая компания в Италии. Мы зачисляем иностранных выпускников в итальянские университеты по <strong>прямому университетскому каналу</strong>. Работаем с университетами и госорганами лично — не удалённо.</p>
   </div>
-</section>
 
-<!-- ─── Benefits ─── -->
-<section id="benefits" class="fade-in">
-  <div class="section-tag">Преимущества</div>
-  <div class="section-title">Что получают стороны</div>
-  <div class="section-sub">Партнёрство с Edupath выгодно всем — университету, студенту и партнёру.</div>
+  <div style="margin-top: 24px;">
+    <table class="ed-table">
+      <thead>
+        <tr><th>Показатель</th><th>Значение</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Студентов в год</td><td class="num-cell">30</td></tr>
+        <tr><td>Уровень зачисления</td><td class="num-cell">95%</td></tr>
+        <tr><td>Уровень получения стипендии (DSU/EDISU)</td><td class="num-cell">90%</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-  <div class="benefits-grid">
-    <div class="benefit-col univ">
-      <h3><span class="icon">🎓</span> Преимущества для университета-партнёра</h3>
-      <div class="benefit-list">
-        <div class="benefit-item">
-          <h4>Комиссия 15%</h4>
-          <p>От стоимости пакета за каждого зачисленного студента. Пример: 5 студентов × €2 340 × 15% = €1 755 за цикл.</p>
-        </div>
-        <div class="benefit-item">
-          <h4>Дополнительный канал набора</h4>
-          <p>Ваши выпускники получают доступ к топовым итальянским университетам без необходимости разбираться в системе самостоятельно.</p>
-        </div>
-        <div class="benefit-item">
-          <h4>Повышение престижа</h4>
-          <p>Студенты, поступившие в итальянские вузы — это показатель качества вашего обучения. Логотип партнёра на материалах Edupath.</p>
-        </div>
-        <div class="benefit-item">
-          <h4>Обмен преподавателями</h4>
-          <p>1–2 преподавателя в год — гостевые лекции и стажировки в итальянских университетах-партнёрах.</p>
-        </div>
-        <div class="benefit-item">
-          <h4>Летние школы в Италии</h4>
-          <p>Совместная летняя программа для ваших студентов (1–2 недели в Италии).</p>
-        </div>
-        <div class="benefit-item">
-          <h4>Ежеквартальные тренинги</h4>
-          <p>Тренинги для офиса международного сотрудничества по итальянской системе образования.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="benefit-col stud">
-      <h3><span class="icon">🇮🇹</span> Преимущества для студентов</h3>
-      <div class="benefit-list">
-        <div class="benefit-item">
-          <h4>Стипендия DSU/EDISU</h4>
-          <p>Покрывает обучение (€0), стипендию до €7 000/год, общежитие (€0) и питание (€0). Назначается по доходу семьи (ISEE).</p>
-        </div>
-        <div class="benefit-item">
-          <h4>Поступление в топовые вузы</h4>
-          <p>Bologna, Padova, Sapienza, PoliMi, PoliTo и другие. Подбираем 3–5 программ под профиль и бюджет.</p>
-        </div>
-        <div class="benefit-item">
-          <h4>Сопровождение весь срок</h4>
-          <p>От подачи до диплома: продление стипендии, зачисление на курс, бюрократия. Мы не исчезаем после зачисления.</p>
-        </div>
-        <div class="benefit-item">
-          <h4>Экстренная поддержка 24/7</h4>
-          <p>Горячая линия для студентов и родителей. Локальный контакт в каждом университетском городе.</p>
-        </div>
-        <div class="benefit-item">
-          <h4>Codice Fiscale + банк</h4>
-          <p>Помощь в получении налогового номера и открытии банковского счёта в Италии.</p>
-        </div>
-        <div class="benefit-item">
-          <h4>Адаптация и жильё</h4>
-          <p>Поиск жилья, аэропорт-встреча, SIM-карта, знакомство с городом — опциональные add-ons.</p>
-        </div>
-      </div>
+  <div style="margin-top: 24px;">
+    <div class="section-tag" style="margin-bottom: 12px;">Наши преимущества</div>
+    <div class="value-list">
+      <ul>
+        <li>Находимся в Италии — работаем с университетами лично</li>
+        <li>Специалисты по стипендиям DSU/EDISU</li>
+        <li><strong>Прямой университетский канал</strong> — работаем с вузами по вступительным экзаменам и зачислению</li>
+        <li>Сопровождение весь срок обучения — от заявки до диплома</li>
+        <li>Экстренная поддержка 24/7</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- ─── Why Italy / Best Cases ─── -->
+<!-- ─── Why Italy ─── -->
 <section id="why-italy" class="fade-in">
   <div class="section-tag">Почему Италия</div>
-  <div class="section-title">Что получает студент — beyond поступления</div>
-  <div class="section-sub">Это не просто учёба за рубежом. Это карьерный капитал, который работает всю жизнь.</div>
+  <div class="section-title">Зачем учиться в Италии</div>
+  <div class="section-sub">Преимущества для студента — далеко за пределами поступления.</div>
 
   <div class="why-grid">
     <div class="why-card">
-      <span class="why-icon">🇮🇹</span>
-      <h4>Изучает итальянский язык</h4>
-      <p>Второй язык в резюме — преимущество на рынке труда. Итальянский открывает доступ к компаниям в Италии, Швейцарии и ЕС.</p>
-    </div>
-    <div class="why-card">
-      <span class="why-icon">📚</span>
-      <h4>Публикации в топовых журналах</h4>
-      <p>Итальянские университеты сотрудничают с высокорейтинговыми научными журналами. Студент может публиковать работы под руководством европейских профессоров.</p>
-    </div>
-    <div class="why-card">
       <span class="why-icon">🎓</span>
-      <h4>Работа с профессорами мирового уровня</h4>
-      <p>Преподаватели из Bologna, Sapienza, PoliMi — авторы учебников, участники международных конференций. Прямой доступ к менторству.</p>
-    </div>
-    <div class="why-card">
-      <span class="why-icon">🌍</span>
-      <h4>Обмен в США, Канаду и другие страны</h4>
-      <p>Через программы обмена студент может поехать на семестр в Америку, Канаду или другой университет ЕС. Италия — мост к глобальным возможностям.</p>
-    </div>
-    <div class="why-card">
-      <span class="why-icon">🔄</span>
-      <h4>Erasmus+ обменные программы</h4>
-      <p>Студент может участвовать в Erasmus — учиться 1–2 семестра в другой стране ЕС, с финансированием от Еврокомиссии.</p>
+      <h4>Академическое превосходство</h4>
+      <p>Европейский диплом — признаётся во всём мире. Профессора высокого уровня, ведущие исследовательские группы.</p>
     </div>
     <div class="why-card">
       <span class="why-icon">🤝</span>
-      <h4>Международная сеть контактов</h4>
-      <p>Однокурсники из 50+ стран. Нетворкинг, который остаётся на всю жизнь — будущие партнёры, коллеги, работодатели по всему миру.</p>
+      <h4>Карьера и сеть контактов</h4>
+      <p>Международная сеть — контакты на всю жизнь. Европейский опыт в CV. Post-study work visa — возможность остаться в ЕС.</p>
     </div>
     <div class="why-card">
-      <span class="why-icon">📜</span>
-      <h4>Европейский диплом</h4>
-      <p>Диплом признаётся во всех странах ЕС и за его пределами. Cutting-edge предметы по европейским стандартам — Bolonia Process, ECTS.</p>
+      <span class="why-icon">📚</span>
+      <h4>За пределами аудитории</h4>
+      <p>Возможность публиковаться в авторитетных журналах. Стажировки во время учёбы. Двойные дипломы. Конференции, гранты, программы ЕС.</p>
     </div>
     <div class="why-card">
-      <span class="why-icon">💼</span>
-      <h4>Опыт работы во время учёбы</h4>
-      <p>Стажировки в итальянских и международных компаниях. European work experience в резюме — мощный сигнал для любого работодателя.</p>
+      <span class="why-icon">🌍</span>
+      <h4>Глобальная мобильность</h4>
+      <p>Erasmus+ обмен — 30+ стран ЕС. Обмен в США, Канаду и далее. Изучение итальянского — ценный второй язык для CV.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Master's in Italy ─── -->
+<section id="masters" class="fade-in">
+  <div class="section-tag">Магистратура в Италии</div>
+  <div class="section-title">Почему магистратура в Италии</div>
+  <div class="section-sub">Престиж, академическая экосистема и реальная возможность публикации — дополняющая вашу аспирантуру.</div>
+
+  <div class="masters-grid">
+    <div class="masters-card">
+      <h4>Престиж и мировое признание</h4>
+      <ul>
+        <li>Магистр итальянского университета несёт <strong>исключительный престиж и академический вес</strong> во всём мире — особенно ценен для студентов, уже обучающихся в аспирантуре</li>
+        <li>Европейский диплом, признанный в ЕС и глобально — инвестиция в академическую репутацию</li>
+        <li>Усиливает CV и академический профиль — международное образование, адаптивность, продвинутые квалификации</li>
+      </ul>
+    </div>
+    <div class="masters-card">
+      <h4>Академическая экосистема Италии</h4>
+      <ul>
+        <li>Одна из <strong>сильнейших академических систем Европы</strong> — века традиций, современная инновация, интеграция в European Research Area</li>
+        <li>Профессора мирового уровня и активные исследовательские сообщества — даже в стандартных программах</li>
+        <li>Работа с итальянскими учёными над дипломной работой — наставничество и обратная связь</li>
+        <li>Дипломная работа под руководством профессоров — <strong>реальные возможности публикации</strong> в журналах</li>
+        <li>Доступ к библиотекам, лабораториям, данным и академическим сетям</li>
+      </ul>
+    </div>
+    <div class="masters-card">
+      <h4>Дополнение к аспирантуре</h4>
+      <ul>
+        <li>Это <strong>не отдельный исследовательский проект</strong> — качественная научная магистратура, дополняющая PhD</li>
+        <li>Продвинутые знания, новые методологии, международные перспективы — применимо к докторскому исследованию</li>
+        <li>Престиж + руководство + публикации = магистр, продвигающий академическую карьеру</li>
+        <li>Контакты на всю жизнь в Италии и Европе — конференции, гранты, исследовательские визиты</li>
+      </ul>
     </div>
   </div>
 
-  <div class="why-banner">
-    <div class="why-banner-content">
-      <h4>Итог: студент получает не просто диплом — он получает карьерный капитал</h4>
-      <p>Второй язык · Европейский диплом · Международная сеть · Опыт работы в ЕС · Возможность обмена в США/Канаду · Публикации · Менторство от топовых профессоров</p>
+  <div class="masters-banner">
+    <h4>Кратко: магистратура в Италии — это больше, чем диплом</h4>
+    <p>Это престиж, доступ к одной из сильнейших академических систем Европы, руководство дипломной работой ведущими учёными и реальная возможность публикации — всё это дополняет и укрепляет вашу аспирантуру на родине.</p>
+    <p>Магистратура в Италии — это престиж, доступ к одной из сильнейших академических систем Европы, работа с ведущими учёными над вашей выпускной работой и реальная возможность публикации результатов. Это инвестиция, которая укрепляет ваш статус и дополняет вашу аспирантуру.</p>
+  </div>
+</section>
+
+<!-- ─── Partnership Value ─── -->
+<section id="partnership" class="fade-in">
+  <div class="section-tag">Ценность партнёрства</div>
+  <div class="section-title">Совместная работа для университетов</div>
+  <div class="section-sub">Прямое сотрудничество с университетами — подготовка к вступительным экзаменам и зачисление.</div>
+
+  <div class="value-list">
+    <ul>
+      <li>Работаем <strong>напрямую с университетами по подготовке к вступительным экзаменам и зачислению</strong> — надёжный мост между квалифицированными иностранными студентами и итальянскими вузами</li>
+      <li>Партнёрство <strong>усиливает международный профиль и разнообразие университета</strong> — мотивированные, качественные студенты, обогащающие академическое сообщество</li>
+      <li><strong>Предварительный отбор и подготовка кандидатов</strong> — вузы получают квалифицированных, готовых к экзаменам абитуриентов, экономя время и администрирование</li>
+      <li><strong>Усиленные институциональные связи</strong> — постоянное сотрудничество строит престиж, доверие и долгосрочные академические связи</li>
+      <li>Фокус на <strong>релевантной подготовке к поступлению</strong> — без лишних предметов. Поддержка адаптирована под то, что ценит университет</li>
+    </ul>
+  </div>
+
+  <div class="value-banner">
+    <h4>Для университетов наше партнёрство означает:</h4>
+    <p>Постоянный поток подготовленных, мотивированных иностранных студентов, снижение административной нагрузки, рост международного престижа и престижное международное сотрудничество — всё на основе прямого доверительного взаимодействия.</p>
+    <p>Для университетов наше партнёрство означает: постоянный поток подготовленных, мотивированных иностранных студентов, снижение административной нагрузки, рост международного престижа и прочные долгосрочные связи.</p>
+  </div>
+</section>
+
+<!-- ─── Results & Case Studies ─── -->
+<section id="results" class="fade-in">
+  <div class="section-tag">Результаты и кейсы</div>
+  <div class="section-title">Университеты-партнёры и кейсы</div>
+  <div class="section-sub">Целевые регионы: Азербайджан, Казахстан, страны СНГ.</div>
+
+  <div class="section-tag" style="margin-bottom: 12px;">Университеты-партнёры</div>
+  <div class="uni-pills">
+    <span class="uni-pill">Università di Bologna</span>
+    <span class="uni-pill">Università degli Studi di Milano</span>
+    <span class="uni-pill">Università degli Studi di Padova</span>
+    <span class="uni-pill">Sapienza Università di Roma</span>
+    <span class="uni-pill">Politecnico di Milano</span>
+    <span class="uni-pill">Politecnico di Torino</span>
+    <span class="uni-pill">Università Iuav di Venezia</span>
+    <span class="uni-pill">Sorbonne / Paris-Saclay (France)</span>
+    <span class="uni-pill">TU Munich / Humboldt (Germany)</span>
+    <span class="uni-pill">University of Warsaw / Jagiellonian (Poland)</span>
+  </div>
+
+  <div style="margin-top: 28px;">
+    <div class="section-tag" style="margin-bottom: 12px;">Кейсы из практики</div>
+    <div class="case-grid">
+      <div class="case-card">
+        <h4>Кейс А</h4>
+        <ul>
+          <li>Студент из Азербайджана, Экономика</li>
+          <li>Зачислен в Università di Pavia, LM-77</li>
+          <li>Стипендия EDISU Lombardia одобрена</li>
+          <li>Полное сопровождение 2 года</li>
+        </ul>
+      </div>
+      <div class="case-card">
+        <h4>Кейс Б</h4>
+        <ul>
+          <li>Студент магистратуры International Relations</li>
+          <li>Зачислен в Università di Macerata, LM-52</li>
+          <li>Стипендия EDISU Marche (общежитие + стипендия)</li>
+          <li>Полный пакет поддержки</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── DSU/EDISU Scholarships ─── -->
+<section id="scholarship" class="fade-in">
+  <div class="section-tag">Стипендии</div>
+  <div class="section-title">Региональные стипендии DSU/EDISU</div>
+  <div class="section-sub">Стипендия покрывает обучение, стипендию, общежитие и питание.</div>
+
+  <div class="scholarship-banner">
+    <h4>Обучение + Стипендия до €7 000/год + Общежитие + Питание</h4>
+    <p>Tuition + Annual stipend up to €7,000 + Accommodation + Meals</p>
+    <div class="sub">Обучение + стипендия до €7 000 в год + общежитие + питание</div>
+  </div>
+
+  <table class="ed-table">
+    <thead>
+      <tr><th>Компонент</th><th>Выгода</th><th>Что предоставляется</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Обучение</td><td class="zero">€0 (бесплатно)</td><td>Бесплатно</td></tr>
+      <tr><td>Стипендия</td><td class="num-cell">До €7 000/год</td><td>Ежемесячные выплаты</td></tr>
+      <tr><td>Общежитие</td><td class="zero">Бесплатно</td><td>Бесплатное проживание</td></tr>
+      <tr><td>Питание</td><td class="zero">Включено</td><td>Бесплатное питание</td></tr>
+    </tbody>
+  </table>
+
+  <div style="margin-top: 20px;">
+    <div class="section-tag" style="margin-bottom: 10px;">Как это работает</div>
+    <div class="value-list">
+      <ul>
+        <li>Назначается по справке о доходах семьи (ISEE) + академической успеваемости</li>
+        <li>Мы берём на себя: подготовка ISEE, подача, апелляции и ежегодное продление</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -833,17 +1157,19 @@
     <div class="pkg-card p1">
       <div class="pkg-head">
         <div class="pkg-tag">Package 1</div>
-        <div class="pkg-name">Admission Concierge</div>
+        <div class="pkg-name">Admission Concierge · Консьерж поступления</div>
         <div class="pkg-price">€1 950</div>
         <div class="pkg-duration">Срок ведения: 2–4 месяца</div>
       </div>
       <div class="pkg-body">
         <ul>
           <li>Подбор программ (до 5 вузов)</li>
-          <li>Аудит документов</li>
-          <li>Подача через платформы вузов</li>
-          <li>Отслеживание и зачисление</li>
+          <li>Аудит документов и подача</li>
+          <li>Отслеживание и подтверждение зачисления</li>
           <li>Экстренная поддержка 24/7</li>
+          <li>Помощь по стипендии DSU/EDISU</li>
+          <li>Codice Fiscale + банковский счёт</li>
+          <li>Полное сопровождение процесса поступления</li>
         </ul>
       </div>
     </div>
@@ -851,324 +1177,340 @@
     <div class="pkg-card p2">
       <div class="pkg-head">
         <div class="pkg-tag">Package 2</div>
-        <div class="pkg-name">Full Package</div>
+        <div class="pkg-name">Full Package · Полный пакет</div>
         <div class="pkg-price">€2 340</div>
-        <div class="pkg-duration">Срок ведения: 2 года</div>
+        <div class="pkg-duration">Срок ведения: весь срок обучения (2 года+)</div>
       </div>
       <div class="pkg-body">
         <ul>
-          <li>Всё из Package 1, плюс:</li>
-          <li>Стипендия DSU/EDISU + ISEE</li>
+          <li>Подбор программ (до 5 вузов)</li>
+          <li>Аудит документов и подача</li>
+          <li>Стипендия DSU/EDISU + ISEE + ежегодное продление</li>
           <li>Codice Fiscale + банковский счёт</li>
-          <li>Сопровождение весь срок обучения</li>
-          <li>Стипендия: €7K/год + общежитие + питание</li>
+          <li>Сопровождение весь срок обучения (от заявки до диплома)</li>
+          <li>Экстренная поддержка 24/7</li>
+          <li>Стипендия: €0 обучение + €7 000/год + общежитие + питание</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── What We Provide ─── -->
-<section id="provide" class="fade-in">
-  <div class="section-tag">Что мы делаем</div>
-  <div class="section-title">Полный спектр услуг</div>
-  <div class="section-sub">От первого контакта до диплома — мы ведём студента на каждом этапе.</div>
-
-  <div class="provide-grid">
-    <div class="provide-card">
-      <span class="icon">📋</span>
-      <h4>Подбор программ</h4>
-      <p>3–5 университетов под профиль, бюджет и языковой уровень студента.</p>
-    </div>
-    <div class="provide-card">
-      <span class="icon">📝</span>
-      <h4>Аудит документов</h4>
-      <p>Диплом, транскрипт, апостилирование, перевод — проверяем и координируем.</p>
-    </div>
-    <div class="provide-card">
-      <span class="icon">🎓</span>
-      <h4>Подача в вузы</h4>
-      <p>Регистрация на Universitaly, подача через платформы университетов, отслеживание.</p>
-    </div>
-    <div class="provide-card">
-      <span class="icon">💰</span>
-      <h4>Стипендия DSU/EDISU</h4>
-      <p>Подготовка ISEE, заявка на стипендию и общежитие, апелляции при отказе, продление.</p>
-    </div>
-    <div class="provide-card">
-      <span class="icon">🆔</span>
-      <h4>Codice Fiscale + банк</h4>
-      <p>Помощь в получении налогового номера и открытии итальянского банковского счёта.</p>
-    </div>
-    <div class="provide-card">
-      <span class="icon">🏠</span>
-      <h4>Поиск жилья</h4>
-      <p>Комната, квартира, договор аренды — ищем жильё до прилёта студента.</p>
-    </div>
-    <div class="provide-card">
-      <span class="icon">✈️</span>
-      <h4>Аэропорт-встреча</h4>
-      <p>Встреча в аэропорту Рима/Милана, трансфер до места проживания.</p>
-    </div>
-    <div class="provide-card">
-      <span class="icon">📱</span>
-      <h4>Адаптация</h4>
-      <p>SIM-карта, знакомство с городом, магазинами, транспортом — первый месяц.</p>
-    </div>
-    <div class="provide-card">
-      <span class="icon">🚨</span>
-      <h4>Экстренная поддержка 24/7</h4>
-      <p>Горячая линия для студентов и родителей. Локальный контакт в каждом городе.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ─── Process Timeline ─── -->
-<section id="process" class="fade-in">
-  <div class="process-section">
-    <div class="section-tag">Процесс</div>
-    <div class="section-title">Как это работает</div>
-    <div class="section-sub">От первого контакта до прилёта в Италию — четыре этапа.</div>
-
-    <div class="timeline">
-      <div class="step">
-        <div class="step-circle">1</div>
-        <h4>Консультация и подбор</h4>
-        <p>Оценка профиля студента, подбор 3–5 программ, аудит документов</p>
-        <span class="pct">30%</span>
-      </div>
-      <div class="step">
-        <div class="step-circle">2</div>
-        <h4>Подача и зачисление</h4>
-        <p>Регистрация на Universitaly, подача в вузы, получение подтверждения</p>
-        <span class="pct">30%</span>
-      </div>
-      <div class="step">
-        <div class="step-circle">3</div>
-        <h4>Стипендия и виза</h4>
-        <p>Заявка DSU/EDISU, подготовка ISEE, подача на визу, Codice Fiscale</p>
-        <span class="pct">40%</span>
-      </div>
-      <div class="step">
-        <div class="step-circle">4</div>
-        <h4>Прилёт и адаптация</h4>
-        <p>Аэропорт-встреча, жильё, SIM, знакомство с городом — старт обучения</p>
-        <span class="pct">✓</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── Payment Structure ─── -->
-<section id="payment" class="fade-in">
-  <div class="section-tag">Оплата</div>
-  <div class="section-title">Прозрачная структура платежей</div>
-  <div class="section-sub">Студент платит поэтапно — по мере продвижения процесса. Комиссия партнёру выплачивается после зачисления.</div>
-
-  <div class="pay-grid">
-    <div class="pay-card p1">
-      <div class="pay-pct">30%</div>
-      <div class="pay-when">При подписании договора</div>
-      <div class="pay-desc">Старт работы: подбор программ, аудит документов, начало подготовки</div>
-    </div>
-    <div class="pay-card p2">
-      <div class="pay-pct">30%</div>
-      <div class="pay-when">После подтверждения зачисления</div>
-      <div class="pay-desc">Студент зачислен в университет — переходим к стипендии и визе</div>
-    </div>
-    <div class="pay-card p3">
-      <div class="pay-pct">40%</div>
-      <div class="pay-when">При подаче на визу</div>
-      <div class="pay-desc">Финальный этап: виза, Codice Fiscale, подготовка к прилёту</div>
-    </div>
-  </div>
-
-  <div style="margin-top: 24px; background: rgba(255,184,0,0.08); border-left: 3px solid var(--amber); border-radius: 8px; padding: 16px 20px; font-size: 13px; color: var(--dark); line-height: 1.6;">
-    <strong style="color: var(--amber);">Комиссия партнёру:</strong> 15% от стоимости пакета за каждого зачисленного студента. Выплата в течение 30 дней после зачисления. Оплата в евро, банковский перевод.
-  </div>
-</section>
-
-<!-- ─── Additional Services ─── -->
+<!-- ─── Add-on Services & Full Cost ─── -->
 <section id="addons" class="fade-in">
   <div class="section-tag">Дополнительно</div>
-  <div class="section-title">База данных и дополнительные услуги</div>
+  <div class="section-title">Дополнительные услуги и полная стоимость</div>
+  <div class="section-sub">Add-on услуги и полная стоимость обучения в Италии.</div>
 
-  <div class="addon-banner">
-    <div class="addon-icon">🗄️</div>
-    <div class="addon-content">
-      <h4>База данных университетов и программ</h4>
-      <p>У нас есть собственная база данных итальянских университетов, программ, требований к поступлению, сроков и стипендий. Партнёр может получить доступ к базе для самостоятельной работы со студентами — как дополнительная услуга.</p>
-      <span class="addon-badge">Опционально · По запросу</span>
-    </div>
+  <div class="section-tag" style="margin-bottom: 12px;">Дополнительные услуги</div>
+  <table class="ed-table" style="margin-bottom: 28px;">
+    <thead>
+      <tr><th>Услуга</th><th>Цена</th><th>Услуга (RU)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Housing search assistance</td><td class="num-cell">€455</td><td>Поиск жилья</td></tr>
+      <tr><td>Airport pickup service</td><td class="num-cell">€130</td><td>Встреча в аэропорту</td></tr>
+      <tr><td>Adaptation & orientation package</td><td class="num-cell">€520</td><td>Адаптационный пакет</td></tr>
+      <tr><td>Entrance exam preparation</td><td class="num-cell">€390</td><td>Подготовка к вступительным экзаменам</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-tag" style="margin-bottom: 12px;">Полная стоимость обучения в Италии</div>
+  <table class="ed-table">
+    <thead>
+      <tr><th>Статья</th><th>Стоимость</th><th>Покрыто</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Услуги Edupath (Package 2)</td><td>€2 340</td><td>Студент</td></tr>
+      <tr><td>Авиабилеты (туда-обратно)</td><td>€600–€1 200</td><td>Студент</td></tr>
+      <tr><td>Медицинская страховка</td><td>€150–€350/год</td><td>Студент</td></tr>
+      <tr><td>Личные расходы</td><td>€500–€800/мес</td><td>Студент</td></tr>
+      <tr><td>Обучение в университете</td><td class="zero">€0</td><td>Стипендия</td></tr>
+      <tr><td>Проживание</td><td class="zero">€0</td><td>Стипендия</td></tr>
+      <tr><td>Питание</td><td class="zero">€0</td><td>Стипендия</td></tr>
+      <tr><td>Годовая стипендия (выплачивается студенту)</td><td class="num-cell">До €7 000/год</td><td>Студенту напрямую</td></tr>
+    </tbody>
+  </table>
+
+  <div style="margin-top: 20px; background: linear-gradient(135deg, rgba(198,255,61,0.1), rgba(198,255,61,0.03)); border: 1px solid rgba(198,255,61,0.2); border-radius: 12px; padding: 20px 24px; text-align: center;">
+    <strong style="color: var(--lime-d); font-size: 16px;">Итого ориентировочные расходы студента: €3 590–€4 690</strong>
+    <div style="font-size: 12px; color: var(--gray); margin-top: 4px; font-style: italic;">Total estimated student start-up cost: €3,590–€4,690</div>
+  </div>
+</section>
+
+<!-- ─── Safety & Emergency Support ─── -->
+<section id="safety" class="fade-in">
+  <div class="section-tag">Безопасность</div>
+  <div class="section-title">Безопасность и поддержка 24/7</div>
+  <div class="section-sub">Горячая линия доступна круглосуточно для студентов и родителей.</div>
+
+  <div class="safety-banner">
+    <div class="hotline-label">Горячая линия · Emergency Hotline</div>
+    <div class="hotline">+39 328 081 0613</div>
+    <div class="sub">Доступна круглосуточно для студентов и родителей · Available 24/7</div>
   </div>
 
-  <div style="margin-top: 20px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
-    <div class="provide-card" style="text-align: center; padding: 20px 16px;">
-      <span class="icon">🏠</span>
-      <h4>Поиск жилья</h4>
-      <p style="color: var(--electric); font-weight: 700; font-size: 16px;">€455</p>
+  <div class="safety-grid">
+    <div class="safety-card">
+      <h4>Локальный контакт</h4>
+      <p>Представитель Edupath в каждом университетском городе.</p>
     </div>
-    <div class="provide-card" style="text-align: center; padding: 20px 16px;">
-      <span class="icon">✈️</span>
-      <h4>Аэропорт-встреча</h4>
-      <p style="color: var(--lime-d); font-weight: 700; font-size: 16px;">€130</p>
+    <div class="safety-card">
+      <h4>Информация родителям</h4>
+      <p>Регулярные отчёты о прогрессе каждые 2 недели.</p>
     </div>
-    <div class="provide-card" style="text-align: center; padding: 20px 16px;">
-      <span class="icon">📱</span>
-      <h4>Адаптация (1 мес.)</h4>
-      <p style="color: var(--amber); font-weight: 700; font-size: 16px;">€520</p>
-    </div>
-    <div class="provide-card" style="text-align: center; padding: 20px 16px;">
-      <span class="icon">📚</span>
-      <h4>TOLC/IMAT</h4>
-      <p style="color: var(--magenta); font-weight: 700; font-size: 16px;">€390</p>
+    <div class="safety-card">
+      <h4>Экстренный запрос</h4>
+      <p>Ответ в течение 2 часов, 24/7.</p>
     </div>
   </div>
 </section>
 
-<!-- ─── Location ─── -->
-<section id="location" class="fade-in">
-  <div class="section-tag">Локация</div>
-  <div class="section-title">Где мы находимся</div>
-  <div class="section-sub">Мы в Италии — работаем с университетами и госорганами лично.</div>
+<!-- ─── Partnership Terms ─── -->
+<section id="terms" class="fade-in">
+  <div class="section-tag">Условия партнёрства</div>
+  <div class="section-title">Комиссия, оплата и возврат</div>
+  <div class="section-sub">Прозрачные условия для партнёров и студентов.</div>
 
-  <div class="location-grid">
-    <div class="location-info">
-      <h3>Edupath Education — Италия, Lazio</h3>
-      <p>Мы базируемся в регионе Лацио (под Римом) и работаем с университетами по всей Италии лично. Это значит, что мы можем решать бюрократические вопросы оперативно — от Codice Fiscale до апелляции по стипендии.</p>
-      <div class="location-meta">
-        <div class="location-meta-item">
-          <div class="dot" style="background: var(--electric);"></div>
-          <span><strong>Юридический адрес:</strong> Via Roma 37, Italy</span>
-        </div>
-        <div class="location-meta-item">
-          <div class="dot" style="background: var(--coral);"></div>
-          <span><strong>Локальные контакты:</strong> Представители в каждом университетском городе</span>
-        </div>
-        <div class="location-meta-item">
-          <div class="dot" style="background: var(--lime);"></div>
-          <span><strong>Языки работы:</strong> Русский, итальянский, английский</span>
-        </div>
-        <div class="location-meta-item">
-          <div class="dot" style="background: var(--amber);"></div>
-          <span><strong>Часовой пояс:</strong> CET (UTC+1) — работаем в рабочие часы Италии</span>
-        </div>
-      </div>
+  <div class="terms-grid">
+    <div class="terms-card">
+      <h4>Комиссия</h4>
+      <span class="big">15%</span>
+      <ul>
+        <li>От стоимости пакета за каждого успешно зачисленного студента</li>
+        <li>Альтернативы: 10% скидка студенту, или комбинированный подход</li>
+      </ul>
     </div>
-    <div class="location-map">
-      <div class="pin">📍</div>
-      <div class="city">Lazio</div>
-      <div class="country">Италия · Под Римом</div>
+    <div class="terms-card">
+      <h4>Условия оплаты</h4>
+      <span class="big">50 / 50</span>
+      <ul>
+        <li>Студент: 50% при подписании, 50% после зачисления</li>
+        <li>Комиссия партнёру: выплата в течение 30 дней</li>
+        <li>Оплата в евро, банковский перевод</li>
+      </ul>
     </div>
-  </div>
-</section>
-
-<!-- ─── Corporation ─── -->
-<section id="corp" class="fade-in">
-  <div class="section-tag">О компании</div>
-  <div class="section-title">Edupath Education</div>
-  <div class="section-sub">Консалтинговая компания, базирующаяся в Италии. B2B университетский канал.</div>
-
-  <div class="corp-card">
-    <div class="corp-grid">
-      <div class="corp-item">
-        <div class="label">Руководитель</div>
-        <div class="value">Anar Hasanov</div>
-      </div>
-      <div class="corp-item">
-        <div class="label">Локация</div>
-        <div class="value">Италия, Lazio (под Римом)</div>
-      </div>
-      <div class="corp-item">
-        <div class="label">Юридический адрес</div>
-        <div class="value">Via Roma 37, Italy</div>
-      </div>
-      <div class="corp-item">
-        <div class="label">Модель работы</div>
-        <div class="value">B2B университетский канал (до 30 студентов/год)</div>
-      </div>
-      <div class="corp-item">
-        <div class="label">Специализация</div>
-        <div class="value">Стипендии DSU/EDISU, поступление, сопровождение</div>
-      </div>
-      <div class="corp-item">
-        <div class="label">Университеты-партнёры</div>
-        <div class="value">Bologna, Padova, Sapienza, PoliMi, PoliTo, Iuav и др.</div>
-      </div>
-      <div class="corp-item">
-        <div class="label">Страны-источники</div>
-        <div class="value">Азербайджан, Казахстан, страны СНГ</div>
-      </div>
-      <div class="corp-item">
-        <div class="label">Языки</div>
-        <div class="value">Русский, итальянский, английский</div>
-      </div>
+    <div class="terms-card">
+      <h4>Политика возврата</h4>
+      <span class="big">По ситуации</span>
+      <ul>
+        <li>Не зачислен ни в один вуз — 100% минус €195</li>
+        <li>Зачислен, но стипендия не одобрена — 50% от Package 2</li>
+        <li>Отказ студента / по вине студента — без возврата</li>
+        <li>Форс-мажор — возврат 100%</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- ─── University Partners ─── -->
+<!-- ─── SLA & Pilot ─── -->
+<section id="sla" class="fade-in">
+  <div class="section-tag">Уровень обслуживания</div>
+  <div class="section-title">SLA и пилотный проект</div>
+  <div class="section-sub">Соглашение об уровне услуг и пилотная программа.</div>
+
+  <table class="ed-table" style="margin-bottom: 24px;">
+    <thead>
+      <tr><th>Параметр</th><th>Обязательство</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Ответ на запрос студента</td><td>В течение 48 часов</td></tr>
+      <tr><td>Ответ на запрос родителя</td><td>В течение 24 часов</td></tr>
+      <tr><td>Ответ на экстренный запрос</td><td>В течение 2 часов (24/7)</td></tr>
+      <tr><td>Эскалация</td><td>Напрямую к Anar Hasanov</td></tr>
+    </tbody>
+  </table>
+
+  <div class="scholarship-banner" style="background: linear-gradient(135deg, rgba(61,223,255,0.1), rgba(61,223,255,0.03));">
+    <h4 style="color: var(--electric);">Пилотный проект</h4>
+    <p style="color: var(--dark);">3–5 студентов, бесплатная ознакомительная сессия, без обязательств.</p>
+    <div class="sub" style="color: var(--gray);">3–5 students, free introductory session, no obligations.</div>
+  </div>
+</section>
+
+<!-- ─── Requirements & Timeline ─── -->
+<section id="requirements" class="fade-in">
+  <div class="section-tag">Требования и сроки</div>
+  <div class="section-title">Требования к поступающим</div>
+  <div class="section-sub">Требования, вступительные экзамены и сроки подачи.</div>
+
+  <div class="section-tag" style="margin-bottom: 12px;">Требования к поступающим</div>
+  <table class="ed-table" style="margin-bottom: 28px;">
+    <thead>
+      <tr><th>Требование</th><th>Детали</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>GPA (бакалавриат)</td><td>Минимум 75/100 или 3.0/4.0</td></tr>
+      <tr><td>GPA (магистратура)</td><td>Минимум 80/100 или 3.2/4.0</td></tr>
+      <tr><td>Английский язык</td><td>IELTS 6.0–6.5 / TOEFL 80–90</td></tr>
+      <tr><td>Итальянский язык</td><td>B2 — CILS, CELI или PLIDA</td></tr>
+      <tr><td>GMAT / GRE</td><td>Для отдельных бизнес-программ</td></tr>
+      <tr><td>Портфолио</td><td>Архитектура и дизайн</td></tr>
+      <tr><td>Мотивационное письмо</td><td>Для большинства магистратур</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-tag" style="margin-bottom: 12px;">Вступительные испытания</div>
+  <div class="value-list" style="margin-bottom: 28px;">
+    <ul>
+      <li><strong>TOLC-A</strong> — Архитектура</li>
+      <li><strong>TOLC-I</strong> — Инженерия</li>
+      <li><strong>IMAT</strong> — Медицина</li>
+      <li><strong>Bocconi Test / SAT</strong> — Bocconi University</li>
+    </ul>
+  </div>
+  <div class="section-note" style="margin-top: -16px; margin-bottom: 28px;">
+    Подготовка фокусируется на релевантном для университета содержании — общая математика и геометрия не emphasised, в соответствии с приоритетами вузов.
+  </div>
+
+  <div class="section-tag" style="margin-bottom: 12px;">Сроки подачи</div>
+  <table class="ed-table">
+    <thead>
+      <tr><th>Период</th><th>Активность</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Сентябрь–Октябрь 2026</td><td>Планирование на весенний набор 2027</td></tr>
+      <tr><td>Ноябрь–Декабрь 2026</td><td>Подготовка документов</td></tr>
+      <tr><td>Январь–Март 2027</td><td>Планирование на осенний набор 2027</td></tr>
+      <tr><td>Январь–Апрель 2027</td><td>Предрегистрация на Universitaly</td></tr>
+      <tr><td>Февраль–Апрель 2027</td><td>Подача в итальянские университеты</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-note" style="margin-top: 16px;">
+    <strong>Вместимость:</strong> до 30 студентов на одного партнёра в год · До 30 студентов на одного партнёра в год
+  </div>
+</section>
+
+<!-- ─── Universities: Architecture & Design ─── -->
 <section id="universities" class="fade-in">
-  <div class="section-tag">Наши направления</div>
-  <div class="section-title">Топ-10 университетов-партнёров</div>
-  <div class="section-sub">Мы работаем напрямую с ведущими вузами Италии и Франции — от Sapienza и Bocconi до Sciences Po и HEC.</div>
+  <div class="section-tag">Вузы-партнёры</div>
+  <div class="section-title">Архитектура и Дизайн</div>
+  <div class="section-sub">Партнёрские университеты по направлениям архитектуры и дизайна.</div>
 
-  <div class="uni-section">
-    <div class="section-tag" style="margin-bottom: 24px;">Топ-5 Италии</div>
-    <div class="uni-grid" style="margin-bottom: 32px;">
-      <div class="uni-card">
-        <img src="logos/polimi.png" alt="Politecnico di Milano">
-        <div class="name">Politecnico di Milano</div>
-        <div class="country">🇮🇹 Италия</div>
-      </div>
-      <div class="uni-card">
-        <img src="logos/bologna.png" alt="Università di Bologna">
-        <div class="name">Università di Bologna</div>
-        <div class="country">🇮🇹 Италия</div>
-      </div>
-      <div class="uni-card">
-        <img src="logos/sapienza.png" alt="Sapienza Università di Roma">
-        <div class="name">Sapienza Università di Roma</div>
-        <div class="country">🇮🇹 Италия</div>
-      </div>
-      <div class="uni-card">
-        <img src="logos/polito.png" alt="Politecnico di Torino">
-        <div class="name">Politecnico di Torino</div>
-        <div class="country">🇮🇹 Италия</div>
-      </div>
-      <div class="uni-card">
-        <img src="logos/firenze.png" alt="Università degli Studi di Firenze">
-        <div class="name">Università di Firenze</div>
-        <div class="country">🇮🇹 Италия</div>
+  <div class="section-tag" style="margin-bottom: 12px;">Архитектура</div>
+  <table class="ed-table" style="margin-bottom: 28px;">
+    <thead>
+      <tr><th>Университет</th><th>Город</th><th>Язык</th><th>Уровень</th><th>Экзамен</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Politecnico di Milano (PoliMi)</td><td>Милан</td><td>EN/IT</td><td>Bachelor/Master</td><td>TOLC-A</td></tr>
+      <tr><td>Politecnico di Torino (PoliTo)</td><td>Турин</td><td>EN/IT</td><td>Bachelor/Master</td><td>TOLC-A</td></tr>
+      <tr><td>Università di Firenze</td><td>Флоренция</td><td>IT</td><td>Bachelor/Master</td><td>TOLC-A</td></tr>
+      <tr><td>Università di Napoli Federico II</td><td>Неаполь</td><td>IT</td><td>Bachelor/Master</td><td>TOLC-A</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-tag" style="margin-bottom: 12px;">Дизайн</div>
+  <table class="ed-table">
+    <thead>
+      <tr><th>Университет</th><th>Город</th><th>Язык</th><th>Уровень</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Politecnico di Milano (PoliMi)</td><td>Милан</td><td>EN/IT</td><td>Bachelor/Master</td></tr>
+      <tr><td>Politecnico di Torino (PoliTo)</td><td>Турин</td><td>EN/IT</td><td>Bachelor/Master</td></tr>
+      <tr><td>IED — Istituto Europeo di Design</td><td>Милан/Рим</td><td>EN/IT</td><td>Bachelor/Master</td></tr>
+      <tr><td>NABA — Nuova Accademia di Belle Arti</td><td>Милан/Рим</td><td>EN/IT</td><td>Bachelor/Master</td></tr>
+      <tr><td>Domus Academy</td><td>Милан</td><td>EN</td><td>Master</td></tr>
+      <tr><td>Università Iuav di Venezia</td><td>Венеция</td><td>IT</td><td>Bachelor/Master</td></tr>
+      <tr><td>Scuola Politecnica di Design (SPD)</td><td>Милан</td><td>EN/IT</td><td>Master</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-note" style="margin-top: 16px;">
+    <strong>Государственные:</strong> €1 000–€3 500/год (до стипендии) · <strong>Частные:</strong> €10 000–€20 000/год
+  </div>
+</section>
+
+<!-- ─── Universities: Business & Economics ─── -->
+<section id="universities-business" class="fade-in">
+  <div class="section-tag">Вузы-партнёры</div>
+  <div class="section-title">Бизнес и Экономика</div>
+  <div class="section-sub">Партнёрские университеты по направлениям бизнеса и экономики.</div>
+
+  <table class="ed-table">
+    <thead>
+      <tr><th>Университет</th><th>Город</th><th>Тип</th><th>Язык</th><th>Уровень</th><th>Ключевые программы</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Bocconi University</td><td>Милан</td><td>Частный</td><td>EN</td><td>B/M</td><td>International Management, Finance</td></tr>
+      <tr><td>LUISS Guido Carli</td><td>Рим</td><td>Частный</td><td>EN</td><td>B/M</td><td>Management & Technology, Economics</td></tr>
+      <tr><td>Università di Bologna</td><td>Болонья</td><td>Государственный</td><td>EN/IT</td><td>B/M</td><td>Business & Economics, LM-77</td></tr>
+      <tr><td>Università Cattolica del Sacro Cuore</td><td>Милан/Рим</td><td>Частный</td><td>EN</td><td>B/M</td><td>Business Management, Finance</td></tr>
+      <tr><td>Ca' Foscari University of Venice</td><td>Венеция</td><td>Государственный</td><td>EN/IT</td><td>B/M</td><td>Management, Economics</td></tr>
+      <tr><td>Università di Padova</td><td>Падуя</td><td>Государственный</td><td>EN/IT</td><td>B/M</td><td>Business Administration, Economics</td></tr>
+      <tr><td>Sapienza Università di Roma</td><td>Рим</td><td>Государственный</td><td>IT</td><td>B/M</td><td>Economics and Commerce</td></tr>
+      <tr><td>Università di Pavia</td><td>Павия</td><td>Государственный</td><td>IT</td><td>M</td><td>LM-77, LM-56</td></tr>
+      <tr><td>Università di Perugia</td><td>Перуджа</td><td>Государственный</td><td>IT</td><td>M</td><td>LM-77, International Economics</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-note" style="margin-top: 16px;">
+    <strong>Также доступно:</strong> IT Management, Law, Foreign Languages, Engineering, Fashion Design
+  </div>
+</section>
+
+<!-- ─── Next Steps ─── -->
+<section id="next-steps" class="fade-in">
+  <div class="section-tag">Следующие шаги</div>
+  <div class="section-title">Давайте строить путь вместе</div>
+  <div class="section-sub">От обсуждения до подачи документов — пошаговый план сотрудничества.</div>
+
+  <div class="steps-list">
+    <div class="step-row">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="main">Партнёр обсуждает предложение с руководством</div>
+        <div class="sub">Partner discusses proposal with management</div>
       </div>
     </div>
-
-    <div class="section-tag" style="margin-bottom: 24px;">Топ-5 Франции</div>
-    <div class="uni-grid">
-      <div class="uni-card">
-        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/fc/Sorbonne_University_Logo.svg/330px-Sorbonne_University_Logo.svg.png" alt="Sorbonne Université">
-        <div class="name">Sorbonne Université</div>
-        <div class="country">🇫🇷 Франция</div>
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="main">Партнёр определяет 3–5 заинтересованных выпускников</div>
+        <div class="sub">Partner identifies 3–5 interested graduates</div>
       </div>
-      <div class="uni-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Paris_Institute_of_Political_Studies.png/330px-Paris_Institute_of_Political_Studies.png" alt="Sciences Po">
-        <div class="name">Sciences Po</div>
-        <div class="country">🇫🇷 Франция</div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="main">Бесплатная ознакомительная онлайн-сессия</div>
+        <div class="sub">Free introductory online session</div>
       </div>
-      <div class="uni-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/HEC_Paris.svg/330px-HEC_Paris.svg.png" alt="HEC Paris">
-        <div class="name">HEC Paris</div>
-        <div class="country">🇫🇷 Франция</div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <div class="main">Подписание официального соглашения</div>
+        <div class="sub">Sign formal MOU</div>
       </div>
-      <div class="uni-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/POLYTECHNIQUE-IP_PARIS.png/330px-POLYTECHNIQUE-IP_PARIS.png" alt="École Polytechnique">
-        <div class="name">École Polytechnique</div>
-        <div class="country">🇫🇷 Франция</div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <div class="main">Студенты выбирают пакет услуг · Подготовка документов (Nov–Dec 2026)</div>
+        <div class="sub">Students choose service package · Document preparation</div>
       </div>
-      <div class="uni-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Aix_Marseille_Universit%C3%A9_logo_2024.png/330px-Aix_Marseille_Universit%C3%A9_logo_2024.png" alt="Aix-Marseille Université">
-        <div class="name">Aix-Marseille Université</div>
-        <div class="country">🇫🇷 Франция</div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <div class="main">Регистрация на портале Universitaly (Jan–Feb 2027)</div>
+        <div class="sub">Universitaly registration</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">7</div>
+      <div class="step-body">
+        <div class="main">Подача документов в итальянские университеты (Feb–Apr 2027)</div>
+        <div class="sub">Submission to Italian universities</div>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">8</div>
+      <div class="step-body">
+        <div class="main">Следующая встреча — через 4–6 недель после получения документа</div>
+        <div class="sub">Next meeting — 4–6 weeks after receiving this document</div>
       </div>
     </div>
   </div>
@@ -1177,23 +1519,23 @@
 <!-- ─── CTA ─── -->
 <section id="contact" class="fade-in">
   <div class="cta-section">
-    <h2>Готовы обсудить партнёрство?</h2>
+    <h2>Давайте строить путь вместе</h2>
     <p>Начнём с пилота: 3–5 студентов, бесплатная ознакомительная сессия, без обязательств.</p>
     <a href="mailto:hasanov.anar.2023@gmail.com" class="cta-button">Написать нам</a>
     <div class="cta-contacts">
-      <div class="cta-contact"><strong>Anar Hasanov</strong></div>
-      <div class="cta-contact"><strong>+39 3280810631</strong></div>
-      <div class="cta-contact"><strong>hasanov.anar.2023@gmail.com</strong></div>
-
+      <div class="cta-contact"><strong>Anar Hasanov / Анар Гасанов</strong></div>
+      <div class="cta-contact"><strong>+39 328 081 0631</strong></div>
+      <div class="cta-contact"><strong>Экстренная линия: +39 328 081 0613</strong></div>
+      <div class="cta-contact">Edupath Education · Via Roma 37, Italy</div>
     </div>
   </div>
 </section>
 
 <!-- ─── Footer ─── -->
 <footer>
-  <div class="brand">Edupath <span>Education</span></div>
+  <div class="brand">Edupath</div>
   <p>Edupath Education · Италия, Lazio · Via Roma 37, Italy<br>
-  Поступление в университеты Италии и Франции · Партнёрское предложение · Август 2026</p>
+  Поступление в университеты Италии · Партнёрское предложение · Август 2026</p>
 </footer>
 
 <script>
